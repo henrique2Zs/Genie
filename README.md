@@ -21,7 +21,13 @@ Las imagens de las pantallas abajo han sido dibujadas con el [Invisionapp Freeha
 - **Contactos/Amigos**
   - Las interfaces de las pestañas mencionas del Perfil y la seguinte pestaña:
   - ![Ante-Contactos](https://user-images.githubusercontent.com/48392595/141696809-c4489509-3041-431a-bee6-4a7c62011570.png)
+
 - **Cards**
-  -  
+  - ![Ante-Cards](https://user-images.githubusercontent.com/48392595/141698762-cadfc1c9-8d24-4811-b354-a2a5049c7eb4.png)
+
+- **Otros**
+  - ![Ante-Otros](https://user-images.githubusercontent.com/48392595/141698819-d6e76e40-5795-4afe-9443-6910c12e44fd.png)
+
+
 
 
