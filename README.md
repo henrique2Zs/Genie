@@ -11,6 +11,7 @@ Los regalos son representados por la inclusión de "Cards" o cartas con imagen y
   - Acceso para analizar alertas generados por usuarios acerca de imagenes, enlaces o descripciones
   - Inclusión y exclusión de Cards
   - Inclusión y exclusión de usuarios
+- Firebase como bases de datos y autenticación de usuarios
 
 # Mockup
 Las imagens de las pantallas abajo han sido dibujadas con el [Invisionapp Freehand](https://www.invisionapp.com/freehand).
