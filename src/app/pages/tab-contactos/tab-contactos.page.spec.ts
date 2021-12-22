@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { ContactsComponent } from 'src/app/list/contacts/contacts.component';
 
 import { TabContactosPage } from './tab-contactos.page';
 
@@ -10,7 +11,7 @@ describe('TabContactosPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TabContactosPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), ContactsComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TabContactosPage);
