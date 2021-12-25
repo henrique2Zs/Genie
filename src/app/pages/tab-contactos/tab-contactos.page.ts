@@ -8,11 +8,13 @@ import { IonList} from '@ionic/angular';
   styleUrls: ['./tab-contactos.page.scss'],
 })
 export class TabContactosPage implements OnInit {
-  //schedule.ts
-  @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
+ 
 
   constructor() { }
 
   ngOnInit() { }
 
+  addContact() { }
+
+  removeContact() { }
 }

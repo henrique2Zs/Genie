@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
 
+  statusSelection:'true';
+
   constructor() { }
 
   ngOnInit() {}
+
+  showSelection() {
+    
+  }
 
 }

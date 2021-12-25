@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tabPerfil</ion-title>
+    <ion-title class="title-header-tab">Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-item>
+      <ion-icon slot=end name="create-outline" color="primary" size="large"></ion-icon>
+      <h1 class="title-content-tab" aligment="center">Tallas</h1>
+    </ion-item>
+  </ion-header>
+<!--  <ion-toolbar slot="end">  -->
+    <info-perfil></info-perfil>
 </ion-content>
