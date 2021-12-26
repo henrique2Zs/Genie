@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { InfoPerfilComponent } from './form/info-perfil/info-perfil.component';
 import { ContactsComponent } from './list/contacts/contacts.component';
+import { WishesComponent } from './grid/wishes/wishes.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,12 @@ const routes: Routes = [
     component: InfoPerfilComponent
   },
   {
-    path: 'wished-page',
-    loadChildren: () => import('./pages/tab-perfil/wished-page/wished-page.module').then( m => m.WishedListPageModule)
+    path: 'WishesComponent',
+    component: WishesComponent
+  },
+  {
+    path: 'wishes-page',
+    loadChildren: () => import('./pages/tab-perfil/wishes-page/wishes-page.module').then( m => m.WishesPagePageModule)
   }
 ];
 
