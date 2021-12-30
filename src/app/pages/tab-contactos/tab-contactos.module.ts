@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TabContactosPageRoutingModule } from './tab-contactos-routing.module';
 
 import { TabContactosPage } from './tab-contactos.page';
-import { ContactsComponent } from 'src/app/list/contacts/contacts.component';
+import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
 
 @NgModule({
   imports: [

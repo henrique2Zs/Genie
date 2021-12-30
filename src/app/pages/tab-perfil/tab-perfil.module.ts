@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TabPerfilPageRoutingModule } from './tab-perfil-routing.module';
 
 import { TabPerfilPage } from './tab-perfil.page';
-import { InfoPerfilComponent } from 'src/app/form/info-perfil/info-perfil.component';
+import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
 
 @NgModule({
   imports: [

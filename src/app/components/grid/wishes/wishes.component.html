@@ -1,19 +1,14 @@
 <ion-grid>
   <ion-row>
-    <ion-col>
-      ion-col
-    </ion-col>
-    <ion-col>
-      ion-col
-    </ion-col>
-    <ion-col>
-      ion-col
-    </ion-col>
-    <ion-col>
-      ion-col
-    </ion-col>
-  </ion-row>
+  <!-- <ion-col size="4"  *ngFor="let card of cardsServices.getCards()">
+      <ion-card (click)="openViewcard(card)" disabled="false"> -->
+        <card-component *ngFor="let card of cardsServices.getCards()" [card]=card 
+        (click)="openViewcard(card)" disabled="true" ></card-component>
+        <!-- ; c: CardComponent = new CardComponent().card=card; -->
+    <!-- </ion-col> -->
 
+  </ion-row>
+</ion-grid>
 
   <!--
   <ion-row>

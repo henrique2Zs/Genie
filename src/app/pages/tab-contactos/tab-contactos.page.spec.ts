@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { ContactsComponent } from 'src/app/list/contacts/contacts.component';
+import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
 
 import { TabContactosPage } from './tab-contactos.page';
 

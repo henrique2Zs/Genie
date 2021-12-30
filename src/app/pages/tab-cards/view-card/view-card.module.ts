@@ -4,22 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { WishesPagePageRoutingModule } from './wishes-page-routing.module';
-import { WishesPagePage } from './wishes-page.page';
-import { WishesComponent } from 'src/app/components/grid/wishes/wishes.component';
+import { ViewCardPageRoutingModule } from './view-card-routing.module';
+
+import { ViewCardPage } from './view-card.page';
 import { CardComponent } from 'src/app/components/card/card.component';
 
+import { ContentUneditableDirective } from 'src/app/directives/content-uneditable.directive';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    WishesPagePageRoutingModule,
+    ViewCardPageRoutingModule
   ],
   declarations: [
-    WishesPagePage,
-    WishesComponent,
+    ViewCardPage,
     CardComponent
+    
   ]
 })
-export class WishesPagePageModule {}
+export class ViewCardPageModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ContactsComponent } from 'src/app/list/contacts/contacts.component';
+import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
 import { IonList} from '@ionic/angular';
 
 @Component({

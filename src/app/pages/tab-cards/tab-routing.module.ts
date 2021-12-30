@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: TabPage
+  },
+  {
+    path: 'view-card',
+    loadChildren: () => import('./view-card/view-card.module').then( m => m.ViewCardPageModule)
   }
 ];
 
