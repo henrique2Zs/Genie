@@ -1,12 +1,11 @@
-<span [card]="card"></span>
 <ion-card>
   <ion-card-content>
     <ion-card-title>
-      <ion-input [(ngModel)]="this.card.title" name="title" placeholder="Título descriptivo" type="text"></ion-input>
+      <ion-input [(ngModel)]="card.title" name="title" placeholder="Título descriptivo" type="text"></ion-input>
     </ion-card-title>
 
-    <p><img [src]="this.card.src" width="80%"></p><br>
-    <ion-input [(ngModel)]="this.card.link" name="enlace" placeholder="Enlace de referencia (opcional)" type="url"></ion-input>
-    <ion-textarea [(ngModel)]="this.card.description" name="subtitle" placeholder="Descripcion"></ion-textarea>
+    <p><img [src]="card.src" width="80%"></p><br>
+    <ion-input [(ngModel)]="card.link" name="enlace" placeholder="Enlace de referencia (opcional)" type="url"></ion-input>
+    <ion-textarea [(ngModel)]="card.description" name="subtitle" placeholder="Descripcion"></ion-textarea>
   </ion-card-content>
 </ion-card>

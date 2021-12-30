@@ -10,6 +10,6 @@
     <ion-icon [hidden]="!ownerCard" name="create-outline" color="primary" size="large" slot="end"></ion-icon>
   </ion-item>
   <ion-card [disabled]="!ownerCard">
-    <card-component></card-component>
+    <card-component [card]="card"></card-component>
   </ion-card>
 </ion-content>

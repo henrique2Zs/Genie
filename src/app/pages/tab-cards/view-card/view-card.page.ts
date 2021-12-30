@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
+import { WishesComponent } from 'src/app/components/grid/wishes/wishes.component';
 
 @Component({
   selector: 'view-card',
@@ -12,22 +13,25 @@ export class ViewCardPage implements OnInit {
 
   ownerCard = true;
   //card: CardComponent;
-  card: Card = new Card();
-
+  //@Input() card: Card;
+  card  : Card = new Card();
+  
   constructor(
-    /*
-    card?: CardComponent,
-    */
+
+    private whishescomp: WishesComponent,
+    //cardBuilder?: Card,
     private router?: Router,
-    private activatedRoute?: ActivatedRoute
+    private activatedRoute?: ActivatedRoute,
+    
     
     ) {
-      
+     // this.card = this.whishescomp.cardSelected; 
     //this.card = router.getCurrentNavigation.arguments
-      //this.card = card;
+      //this.card = cardBuilder;
    }
 
   ngOnInit() {
+   this.card = this.whishescomp.cardSelected
   }
 
 }

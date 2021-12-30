@@ -23,7 +23,9 @@ export class WishesComponent implements OnInit {
 
   openViewcard(card: Card) {
     this.cardSelected = card;
-    this.cardSelected = this.router.navigateByUrl('view-card').then.call(card);
+    //let cardview = new ViewCardPage(this).ngOnInit();
+    this.router.navigateByUrl('view-card');
+    //new ViewCardPage(this);
   }
 
 }

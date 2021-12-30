@@ -27,7 +27,14 @@ export class CardsService {
         "test 2",
         2,
         "es"
-      )
+      ),
+      new Card(),
+      new Card(),
+      new Card(),
+      new Card(),
+      new Card(),
+      new Card()
+
     ]
   }
 

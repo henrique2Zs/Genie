@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Card } from 'src/app/class/card';
 import { CardsService } from 'src/app/services/cards.service';
 import { Url } from 'url';
@@ -11,7 +11,7 @@ import { Url } from 'url';
 
 export class CardComponent implements OnInit {
 
-  card: Card = new Card();
+  @Input() card: Card;
   
   constructor () { //private cardBuild?: Card, private cardsService?: CardsService) { 
   /*  
