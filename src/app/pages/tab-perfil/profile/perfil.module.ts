@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TabPerfilPageRoutingModule } from './tab-perfil-routing.module';
+import { TabPerfilPageRoutingModule } from './perfil-routing.module';
 
-import { TabPerfilPage } from './tab-perfil.page';
+import { PerfilPage } from './perfil.page';
 import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-pe
     TabPerfilPageRoutingModule
   ],
   declarations: [
-    TabPerfilPage,
+    PerfilPage,
     InfoPerfilComponent
   ]
 })

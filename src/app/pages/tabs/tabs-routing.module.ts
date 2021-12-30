@@ -17,8 +17,8 @@ const routes: Routes = [
         loadChildren: () => import('../tab-contactos/tab-contactos.module').then(m => m.TabContactosPageModule)
       },
       {
-        path: 'tab-perfil',
-        loadChildren: () => import('../tab-perfil/tab-perfil.module').then(m => m.TabPerfilPageModule)
+        path: 'perfil',
+        loadChildren: () => import('../tab-perfil/profile/perfil.module').then(m => m.TabPerfilPageModule)
       },
       {
         path: '',
