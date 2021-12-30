@@ -7,6 +7,7 @@ import { Card } from '../class/card';
 export class CardsService {
 
   cards: Card[];
+  selectedCard: Card;
 
   constructor() {
     this.cards = [
@@ -40,6 +41,10 @@ export class CardsService {
 
   public getCards(): Card[] {
     return this.cards;
+  }
+
+  public put(card: Card): void {
+    this.cards.push(card);
   }
 }
 

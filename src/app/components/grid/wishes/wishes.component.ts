@@ -12,7 +12,6 @@ import { Card } from 'src/app/class/card';
 export class WishesComponent implements OnInit {
 
   cardSelected: Card;
-  
 
   constructor(
     private cardsServices: CardsService,
@@ -23,9 +22,8 @@ export class WishesComponent implements OnInit {
 
   openViewcard(card: Card) {
     this.cardSelected = card;
-    //let cardview = new ViewCardPage(this).ngOnInit();
+    this.cardsServices.selectedCard = this.cardSelected;    
     this.router.navigateByUrl('view-card');
-    //new ViewCardPage(this);
   }
 
 }

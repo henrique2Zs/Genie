@@ -12,7 +12,6 @@ export class Card {
     authorId: number = 0;
     lang: string = "";
    
-
     constructor(id?, link?,src?, title?,description?,authorId?,lang?) {
         this.id = id;
         this.link = link;

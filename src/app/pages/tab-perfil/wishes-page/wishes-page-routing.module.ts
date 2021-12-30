@@ -18,12 +18,12 @@ const routes: Routes = [
         {
         path: 'CardComponent',
         component: CardComponent,
-       /*
+       
         children: [
           {
           path: 'ViewCardPage',
           component: ViewCardPageModule
-          }] */
+          }] 
         }]
       }]
   }
