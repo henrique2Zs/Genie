@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'tab-contactos',
-        loadChildren: () => import('../tab-contactos/tab-contactos.module').then(m => m.TabContactosPageModule)
+        loadChildren: () => import('../tab-contacts/contacts-page/contacts-page.module').then(m => m.ContactsPageModule)
       },
       {
         path: 'perfil',

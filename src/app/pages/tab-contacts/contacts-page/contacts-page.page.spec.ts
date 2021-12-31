@@ -2,19 +2,19 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
 
-import { TabContactosPage } from './tab-contactos.page';
+import { ContactsPage } from './contacts-page.page';
 
-describe('TabContactosPage', () => {
-  let component: TabContactosPage;
-  let fixture: ComponentFixture<TabContactosPage>;
+describe('ContactsPage', () => {
+  let component: ContactsPage;
+  let fixture: ComponentFixture<ContactsPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TabContactosPage ],
+      declarations: [ ContactsPage ],
       imports: [IonicModule.forRoot(), ContactsComponent]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TabContactosPage);
+    fixture = TestBed.createComponent(ContactsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

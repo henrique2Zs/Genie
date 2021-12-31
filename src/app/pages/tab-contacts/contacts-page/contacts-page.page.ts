@@ -3,11 +3,11 @@ import { ContactsComponent } from 'src/app/components/list/contacts/contacts.com
 import { IonList} from '@ionic/angular';
 
 @Component({
-  selector: 'app-tab-contactos',
-  templateUrl: './tab-contactos.page.html',
-  styleUrls: ['./tab-contactos.page.scss'],
+  selector: 'contacts-page',
+  templateUrl: './contacts-page.page.html',
+  styleUrls: ['./contacts-page.page.scss'],
 })
-export class TabContactosPage implements OnInit {
+export class ContactsPage implements OnInit {
  
 
   constructor() { }

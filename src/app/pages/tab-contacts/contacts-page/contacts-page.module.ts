@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TabContactosPageRoutingModule } from './tab-contactos-routing.module';
+import { ContactsPageRoutingModule } from './contacts-page-routing.module';
 
-import { TabContactosPage } from './tab-contactos.page';
+import { ContactsPage } from './contacts-page.page';
 import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
 
 @NgModule({
@@ -14,14 +14,14 @@ import { ContactsComponent } from 'src/app/components/list/contacts/contacts.com
     CommonModule,
     FormsModule,
     IonicModule,
-    TabContactosPageRoutingModule,   
+    ContactsPageRoutingModule,   
   ],
   declarations: [
-    TabContactosPage,
+    ContactsPage,
     ContactsComponent
   ],
   entryComponents: [
     ContactsComponent
   ]
 })
-export class TabContactosPageModule {}
+export class ContactsPageModule {}
