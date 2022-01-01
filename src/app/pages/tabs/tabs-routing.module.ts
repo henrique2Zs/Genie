@@ -17,9 +17,9 @@ const routes: Routes = [
         loadChildren: () => import('../tab-contacts/contacts-page/contacts-page.module').then(m => m.ContactsPageModule)
       },
       {
-        path: 'perfil',
-        loadChildren: () => import('../tab-perfil/profile/perfil.module').then(m => m.TabPerfilPageModule)
-      },
+        path: 'subtab-profile',        
+        loadChildren: () => import('./subtab-profile/subtab-profile.module').then( m => m.SubtabProfilePageModule)        
+      }, 
       {
         path: '',
         redirectTo: 'tabs',
@@ -31,7 +31,19 @@ const routes: Routes = [
     path: '',
     redirectTo: 'tabs',
     pathMatch: 'full'
-  }
+  },
+/*  {
+    path: 'subtab-profile',
+    loadChildren: () => import('./subtab-profile/subtab-profile.module').then( m => m.SubtabProfilePageModule)
+  },
+  {
+    path: 'subtab-cards',
+    loadChildren: () => import('./subtab-cards/subtab-cards.module').then( m => m.SubtabCardsPageModule)
+  },
+  {
+    path: 'subtab-contacts',
+    loadChildren: () => import('./subtab-contacts/subtab-contacts.module').then( m => m.SubtabContactsPageModule)
+  } */
 ];
 
 @NgModule({

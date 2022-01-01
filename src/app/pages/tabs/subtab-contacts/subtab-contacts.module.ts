@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListPageRoutingModule } from './list-routing.module';
+import { SubtabContactsPageRoutingModule } from './subtab-contacts-routing.module';
 
-import { ListPage } from './list.page';
+import { SubtabContactsPage } from './subtab-contacts.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListPageRoutingModule
+    SubtabContactsPageRoutingModule
   ],
-  declarations: [ListPage]
+  declarations: [SubtabContactsPage]
 })
-export class ListPageModule {}
+export class SubtabContactsPageModule {}
