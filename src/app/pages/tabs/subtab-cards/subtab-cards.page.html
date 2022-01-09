@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>subtab-cards</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
 
-<ion-content>
+  <ion-tab-bar slot="top">
+    <ion-tab-button tab="selection">
+      <ion-icon name="triangle"></ion-icon>
+      <ion-label>Selection</ion-label>
+    </ion-tab-button>
 
-</ion-content>
+    <ion-tab-button tab="build">
+      <ion-icon name="ellipse"></ion-icon>
+      <ion-label>Build</ion-label>
+    </ion-tab-button>
+  
+    <ion-tab-button tab="sent">
+      <ion-icon name="triangle"></ion-icon>
+      <ion-label>Sent</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="liked">
+      <ion-icon name="ellipse"></ion-icon>
+      <ion-label>Liked</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

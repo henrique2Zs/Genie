@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SubtabProfilePageRoutingModule } from './subtab-profile-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-import { SubtabProfilePage } from './subtab-profile.page';
+import { LoginPage } from './login.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SubtabProfilePageRoutingModule
+    LoginPageRoutingModule
   ],
-  declarations: [SubtabProfilePage]
+  declarations: [LoginPage]
 })
-export class SubtabProfilePageModule {}
+export class LoginPageModule {}

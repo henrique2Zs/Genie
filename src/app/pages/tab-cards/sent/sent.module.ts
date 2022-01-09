@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TabPageRoutingModule } from './tab-routing.module';
+import { SentPageRoutingModule } from './sent-routing.module';
 
-import { TabPage } from './tab.page';
+import { SentPage } from './sent.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TabPageRoutingModule
+    SentPageRoutingModule
   ],
-  declarations: [TabPage]
+  declarations: [SentPage]
 })
-export class TabPageModule {}
+export class SentPageModule {}

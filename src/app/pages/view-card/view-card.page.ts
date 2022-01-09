@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Type } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
+import { CardsServiceBuild } from 'src/app/services/cards-service-build.service';
+import { CardsServiceWishesService } from 'src/app/services/cards-service-wishes.service';
 import { CardsService } from 'src/app/services/cards.service';
 
 @Component({
@@ -14,13 +16,13 @@ export class ViewCardPage implements OnInit {
   card: Card = new Card();
 
   constructor(
-    private cardsServices: CardsService,
+    private cardsService: CardsService,
     private router?: Router,
     private activatedRoute?: ActivatedRoute,
   ) { }
 
   ngOnInit() { 
-    this.card = this.cardsServices.selectedCard
+    this.card = this.cardsService.selectedCard;
   }
 
 }

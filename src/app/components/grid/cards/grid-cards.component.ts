@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ViewCardPage } from 'src/app/pages/tab-cards/view-card/view-card.page';
-import { CardComponent } from '../../card/card.component';
 import { Router } from '@angular/router';
 import { CardsService } from 'src/app/services/cards.service';
 import { Card } from 'src/app/class/card';
 @Component({
-  selector: 'wishes',
-  templateUrl: './wishes.component.html',
-  styleUrls: ['./wishes.component.scss'],
+  selector: 'grid-cards',
+  templateUrl: './grid-cards.component.html',
+  styleUrls: ['./grid-cards.component.scss'],
 })
-export class WishesComponent implements OnInit {
+export class GridCardsComponent implements OnInit {
 
   cardSelected: Card;
 

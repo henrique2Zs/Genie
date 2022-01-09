@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PerfilPage } from './perfil.page';
+import { ProfilePage } from './profile.page';
 import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: PerfilPage,
+    component: ProfilePage,
     children: [
       {
       path: 'InfoPerfilComponent',
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PerfilPageRoutingModule {}
+export class ProfilePageRoutingModule {}

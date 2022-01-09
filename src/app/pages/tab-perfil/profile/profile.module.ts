@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PerfilPageRoutingModule } from './perfil-routing.module';
+import { ProfilePageRoutingModule } from './profile-routing.module';
 
-import { PerfilPage } from './perfil.page';
+import { ProfilePage } from './profile.page';
 import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
 
 @NgModule({
@@ -14,11 +14,11 @@ import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-pe
     CommonModule,
     FormsModule,
     IonicModule,
-    PerfilPageRoutingModule
+    ProfilePageRoutingModule
   ],
   declarations: [
-    PerfilPage,
+    ProfilePage,
     InfoPerfilComponent
   ]
 })
-export class PerfilPageModule {}
+export class ProfilePageModule {}

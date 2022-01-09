@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-subtab-cards',
+  selector: 'subtab-cards',
   templateUrl: './subtab-cards.page.html',
   styleUrls: ['./subtab-cards.page.scss'],
 })

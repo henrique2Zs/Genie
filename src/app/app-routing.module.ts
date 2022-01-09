@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { InfoPerfilComponent } from './components/form/info-perfil/info-perfil.component';
 import { ContactsComponent } from './components/list/contacts/contacts.component';
-import { WishesComponent } from './components/grid/wishes/wishes.component';
+import { GridCardsComponent } from './components/grid/cards/grid-cards.component';
 import { CardComponent } from './components/card/card.component';
 
 const routes: Routes = [
@@ -19,8 +19,8 @@ const routes: Routes = [
     component: InfoPerfilComponent
   },
   {
-    path: 'WishesComponent',
-    component: WishesComponent
+    path: 'GridCardsComponent',
+    component: GridCardsComponent
   },
   {
     path: 'CardComponent',
@@ -32,7 +32,35 @@ const routes: Routes = [
   },
   {
     path: 'view-card',
-    loadChildren: () => import('./pages/tab-cards/view-card/view-card.module').then( m => m.ViewCardPageModule)
+    loadChildren: () => import('./pages/view-card/view-card.module').then( m => m.ViewCardPageModule)
+  },
+  {
+    path: 'activities-page',
+    loadChildren: () => import('./pages/tab-contacts/activities-page/activities-page.module').then( m => m.ActivitiesPagePageModule)
+  },
+  {
+    path: 'selection',
+    loadChildren: () => import('./pages/tab-cards/selection/selection.module').then( m => m.SelectionPageModule)
+  },
+  {
+    path: 'build',
+    loadChildren: () => import('./pages/tab-cards/build/build.module').then( m => m.BuildPageModule)
+  },
+  {
+    path: 'sent',
+    loadChildren: () => import('./pages/tab-cards/sent/sent.module').then( m => m.SentPageModule)
+  },
+  {
+    path: 'liked',
+    loadChildren: () => import('./pages/tab-cards/liked/liked.module').then( m => m.LikedPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'report',
+    loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
   }
 ];
 

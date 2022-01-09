@@ -9,12 +9,13 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab-cards',
-        loadChildren: () => import('../tab-cards/tab.module').then(m => m.TabPageModule)
+        path: 'subtab-cards',        
+        loadChildren: () => import('./subtab-cards/subtab-cards.module').then( m => m.SubtabCardsPageModule)
+   
       },
       {
-        path: 'tab-contactos',
-        loadChildren: () => import('../tab-contacts/contacts-page/contacts-page.module').then(m => m.ContactsPageModule)
+        path: 'subtab-contacts',
+        loadChildren: () => import('./subtab-contacts/subtab-contacts.module').then(m => m.SubtabContactsPageModule)
       },
       {
         path: 'subtab-profile',        
@@ -32,18 +33,7 @@ const routes: Routes = [
     redirectTo: 'tabs',
     pathMatch: 'full'
   },
-/*  {
-    path: 'subtab-profile',
-    loadChildren: () => import('./subtab-profile/subtab-profile.module').then( m => m.SubtabProfilePageModule)
-  },
-  {
-    path: 'subtab-cards',
-    loadChildren: () => import('./subtab-cards/subtab-cards.module').then( m => m.SubtabCardsPageModule)
-  },
-  {
-    path: 'subtab-contacts',
-    loadChildren: () => import('./subtab-contacts/subtab-contacts.module').then( m => m.SubtabContactsPageModule)
-  } */
+  
 ];
 
 @NgModule({

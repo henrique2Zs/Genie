@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { WishesPagePageRoutingModule } from './wishes-page-routing.module';
-import { WishesPagePage } from './wishes-page.page';
+import { BuildPageRoutingModule } from './build-routing.module';
+
+import { BuildPage } from './build.page';
 import { GridCardsComponent } from 'src/app/components/grid/cards/grid-cards.component';
 import { CardComponent } from 'src/app/components/card/card.component';
 
@@ -14,12 +15,12 @@ import { CardComponent } from 'src/app/components/card/card.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    WishesPagePageRoutingModule,
+    BuildPageRoutingModule
   ],
   declarations: [
-    WishesPagePage,
-    GridCardsComponent,
+    BuildPage,
+    //GridCardsComponent,
     CardComponent
   ]
 })
-export class WishesPagePageModule {}
+export class BuildPageModule {}

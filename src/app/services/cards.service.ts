@@ -6,48 +6,79 @@ import { Card } from '../class/card';
 })
 export class CardsService {
 
-  cards: Card[];
+  cards: Map<number, Card> = new Map<number, Card>();
   selectedCard: Card;
 
+  numsBuilt: number[] = new Array<number>();
+  numsSent: number[] = new Array<number>();
+  numsLiked: number[] = new Array<number>();
+  numsSelection: number[] = new Array<number>();
+  numsWished: number[] = new Array<number>();
+
+  collectionBuilt: Card[] = new Array<Card>();
+  collectionSent: Card[] = new Array<Card>();
+  collectionLiked: Card[] = new Array<Card>();
+  collectionSellection: Card[] = new Array<Card>();
+  collectionWished: Card[] = new Array<Card>();
+
   constructor() {
-    this.cards = [
+    this.cards.set(1,
       new Card(
         1,
-        "www.bing.com",
+        "www.boom.com",
         "./app/card/Captura.png",
         "Card 1",
         "test 1",
         1,
         "es"
-      ),
-      new Card(      
-        2,
-        "www.bing2",
-        "./app/card/Captura.png",
-        "Card 2",
-        "test 2",
-        2,
-        "es"
-      ),
-      new Card(),
-      new Card(),
-      new Card(),
-      new Card(),
-      new Card(),
-      new Card()
+      ));
+      this.cards.set(2,
+        new Card(
+          2,
+          "www.bing2",
+          "./app/card/Captura.png",
+          "Card 2",
+          "test 2",
+          2,
+          "es"
+        ));            
+   }
 
-    ]
-  }
-
-  public getCards(): Card[] {
+  public getCards(): Map<number, Card> {
     return this.cards;
   }
 
   public put(card: Card): void {
-    this.cards.push(card);
+    this.cards.set(card.id, card);
+    //push card into db
+    //pull cards from db
   }
-}
 
+  public buildCardsBuilt(){
+    this.buildCards(this.numsBuilt, this.collectionBuilt);
+  }
+  public buildCardsSent(){
+    this.buildCards(this.numsSent, this.collectionSent);
+  }
+  public buildCardsLiked(){
+    this.buildCards(this.numsLiked, this.collectionLiked);
+  }
+  public buildCardsSellection(){
+    this.buildCards(this.numsSelection, this.collectionSellection);
+  }
+  public buildCardsWished(){
+    this.buildCards(this.numsWished, this.collectionWished);
+  }
+
+  buildCards(cardsnum: number[], collection: Card[]): void {        
+    for (let num = 0; num < (cardsnum.length); num++) {
+       collection.push(this.cards.get(cardsnum[num]));      
+    }
+  }
+
+  ngOnInit() {}
+
+}
 /*
 id: 1,
         link: "www.bing.com",
