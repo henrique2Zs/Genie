@@ -2,10 +2,9 @@
   <ion-row>
   <!-- <ion-col size="4"  *ngFor="let card of cardsServices.getCards()">
       <ion-card (click)="openViewcard(card)" disabled="false"> -->
-        <card-component *ngFor="let card of cardsServices.getCards()" [card]=card 
+        <card-component *ngFor="let card of collectionCards" [card]=card         
         (click)="openViewcard(card)"  contenteditable="false"
          ></card-component>        
     <!-- </ion-col> -->
-
   </ion-row>
 </ion-grid>

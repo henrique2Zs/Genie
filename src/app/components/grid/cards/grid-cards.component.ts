@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardsService } from 'src/app/services/cards.service';
 import { Card } from 'src/app/class/card';
@@ -10,13 +10,15 @@ import { Card } from 'src/app/class/card';
 export class GridCardsComponent implements OnInit {
 
   cardSelected: Card;
+  @Input() collectionCards: Card[];
 
   constructor(
     private cardsServices: CardsService,
     private router: Router) {
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+  }
 
   openViewcard(card: Card) {
     this.cardSelected = card;

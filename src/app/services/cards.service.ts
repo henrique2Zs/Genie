@@ -26,7 +26,7 @@ export class CardsService {
       new Card(
         1,
         "www.boom.com",
-        "./app/card/Captura.png",
+        "/app/components/card/Captura.png",
         "Card 1",
         "test 1",
         1,
