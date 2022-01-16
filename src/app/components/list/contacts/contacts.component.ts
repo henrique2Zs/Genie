@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/class/user';
+import { ContactsService } from 'src/app/services/contacts.service';
 
 @Component({
   selector: 'app-contacts',
@@ -8,13 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class ContactsComponent implements OnInit {
 
   statusSelection:'true';
+  contactSelected: User;
 
-  constructor() { }
+  constructor(private contactsService: ContactsService) { }
 
   ngOnInit() {}
 
   showSelection() {
-    
+    this.contactsService.contactsMap.values
   }
 
 }

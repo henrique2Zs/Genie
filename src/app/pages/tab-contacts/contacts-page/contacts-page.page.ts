@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
 import { IonList} from '@ionic/angular';
+import { ContactsService } from 'src/app/services/contacts.service';
+import { User } from 'src/app/class/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'contacts-page',
@@ -9,12 +12,22 @@ import { IonList} from '@ionic/angular';
 })
 export class ContactsPage implements OnInit {
  
-
-  constructor() { }
+  contactSelected: User;
+  
+  constructor(
+    private router: Router,
+    private contactsService: ContactsService) { }
 
   ngOnInit() { }
 
-  addContact() { }
+  addContact() { //TODO
+  }
 
-  removeContact() { }
+  removeContact() { //TODO
+   }
+
+  viewPageContact() {
+    this.router.navigateByUrl('view-contacts');
+    console.log(this.contactsService.contactSelected.fullname)
+  }
 }

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="title-header-tab">{{user}}</ion-title>
+    <ion-title class="title-header-tab">{{user.fullname}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,6 +11,7 @@
       <h1 class="title-content-tab" aligment="center">Tallas</h1>
     </ion-item>
   </ion-header>
-<!--  <ion-toolbar slot="end">  -->
-    <info-perfil></info-perfil>
+  <ion-content>
+    <info-perfil [user]="user"></info-perfil>
+  </ion-content>
 </ion-content>

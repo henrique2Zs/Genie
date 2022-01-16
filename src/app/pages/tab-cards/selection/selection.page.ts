@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CardsService } from 'src/app/services/cards.service';
 
 @Component({
   selector: 'app-selection',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectionPage implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private router: Router,
+    private cardsService: CardsService
+  ) {
+    this.cardsService.numsSelection.push(2);
+    this.cardsService.numsSelection.push(1);
+    this.cardsService.buildCardsSellection();
   }
+
+  ngOnInit() {}
 
 }

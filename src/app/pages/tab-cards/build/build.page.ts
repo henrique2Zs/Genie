@@ -10,27 +10,27 @@ import { CardsService } from 'src/app/services/cards.service';
 })
 export class BuildPage implements OnInit {
 
-  cardNew: Card = new Card(0, 'www. .com', './add-circle.svg', 'NEW CARD','',0,'');
+  cardNew: Card = new Card(0, 'www. .com', './add-circle.svg', 'NEW CARD', '', 0, '');
   cardNeweditable: Card = new Card();
 
   constructor(
-    private router: Router,    
+    private router: Router,
     private cardsService: CardsService
-    ) {
-      this.cardsService.numsBuilt.push(2);
-      this.cardsService.numsBuilt.push(1);      
-      this.cardsService.buildCardsBuilt();
-     }
+  ) {
+    this.cardsService.numsBuilt.push(2);
+    this.cardsService.numsBuilt.push(1);
+    this.cardsService.buildCardsBuilt();
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   openViewcard(cardClicked: Card) {
-    this.cardsService.selectedCard = cardClicked;        
+    this.cardsService.selectedCard = cardClicked;
     this.router.navigateByUrl('view-card');
   }
 
   openNewViewcard() {
-    this.cardsService.selectedCard = this.cardNeweditable;    
+    this.cardsService.selectedCard = this.cardNeweditable;
     this.router.navigateByUrl('view-card');
   }
 }

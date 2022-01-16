@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LikedPageRoutingModule } from './liked-routing.module';
 
 import { LikedPage } from './liked.page';
+import { CardComponent } from 'src/app/components/card/card.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { LikedPage } from './liked.page';
     IonicModule,
     LikedPageRoutingModule
   ],
-  declarations: [LikedPage]
+  declarations: [LikedPage,
+    CardComponent]
 })
 export class LikedPageModule {}

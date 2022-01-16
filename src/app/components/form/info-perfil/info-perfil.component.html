@@ -1,28 +1,28 @@
 <ion-item>
   <ion-label slot=start>Cabeza</ion-label>
-  <ion-input slot="end" placeholder="type here"></ion-input>
+  <ion-input [(ngModel)]="user.infoHead" slot="end" placeholder="type here" type="text"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label slot=start>Cuello</ion-label>
-  <ion-input slot="end" placeholder="type here"></ion-input>
+  <ion-input [(ngModel)]="user.infoNeck" slot="end" placeholder="type here" type="text"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label slot=start>Superior</ion-label>
-  <ion-input slot="end" placeholder="type here"></ion-input>
+  <ion-input [(ngModel)]="user.infoUpper" slot="end" placeholder="type here" type="text"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label slot=start>Cintura</ion-label>
-  <ion-input slot="end" placeholder="type here"></ion-input>
+  <ion-input [(ngModel)]="user.infoWaist" slot="end" placeholder="type here" type="text"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label slot=start>Inferior</ion-label>
-  <ion-input slot="end" placeholder="type here"></ion-input>
+  <ion-input [(ngModel)]="user.infoLower" slot="end" placeholder="type here" type="text"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label slot=start>Calzados</ion-label>
-  <ion-input slot="end" placeholder="type here"></ion-input>
+  <ion-input [(ngModel)]="user.infoFeet" slot="end" placeholder="type here" type="text"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label slot=start>Más info</ion-label>
-  <ion-textarea slot=end size=400 ></ion-textarea>
+  <ion-textarea [(ngModel)]="user.infoAdditional" slot=end size=400 ></ion-textarea>
 </ion-item>

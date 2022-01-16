@@ -61,6 +61,10 @@ const routes: Routes = [
   {
     path: 'report',
     loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
+  },
+  {
+    path: 'view-contacts',
+    loadChildren: () => import('./pages/tab-contacts/view-contacts/view-contacts.module').then( m => m.ViewContactsPageModule)
   }
 ];
 

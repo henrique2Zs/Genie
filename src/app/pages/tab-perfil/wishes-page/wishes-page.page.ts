@@ -12,17 +12,14 @@ import { CardsService } from 'src/app/services/cards.service';
 })
 export class WishesPagePage implements OnInit {
 
-  viewPage: ViewCardPage;
-  //wishesGrid= new WishesComponent(this.router: Router);
-  //cards: CardComponent[] = [new CardComponent];
+  viewPage: ViewCardPage;  
   grid: GridCardsComponent = new GridCardsComponent(this.cardsService, this.router,);
 
   constructor(private router: Router,
     private cardsService: CardsService) {
       this.cardsService.numsWished.push(2);
       this.cardsService.buildCardsWished();
-      this.grid.collectionCards =  this.cardsService.collectionWished;
-   // this.wishesGrid.cards.unshift(new CardComponent);
+      this.grid.collectionCards =  this.cardsService.collectionWished;   
   }
 
   ngOnInit() {

@@ -1,8 +1,6 @@
 import { Component, OnInit, Type } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
-import { CardsServiceBuild } from 'src/app/services/cards-service-build.service';
-import { CardsServiceWishesService } from 'src/app/services/cards-service-wishes.service';
 import { CardsService } from 'src/app/services/cards.service';
 
 @Component({

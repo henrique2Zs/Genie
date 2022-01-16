@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from 'src/app/class/user';
 
 @Component({
   selector: 'info-perfil',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-perfil.component.scss'],
 })
 export class InfoPerfilComponent implements OnInit {
+
+  @Input() user: User;
 
   constructor() { }
 
