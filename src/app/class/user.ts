@@ -16,7 +16,7 @@ export class User {
     infoLower: string= "";
     infoFeet: string= "";
     infoAdditional: string= "";
-    cardsWishes: Card[];    
+    cardsWishes: number[];    
 
     constructor(nickname: string,fullname: string) {
         this.nickname = nickname;
