@@ -1,29 +1,31 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardsService } from 'src/app/services/cards.service';
 import { Card } from 'src/app/class/card';
+import { WishesPagePage } from 'src/app/pages/tab-perfil/wishes-page/wishes-page.page';
+
 @Component({
   selector: 'grid-cards',
   templateUrl: './grid-cards.component.html',
   styleUrls: ['./grid-cards.component.scss'],
 })
+@Injectable({
+  providedIn: 'root'
+})
 export class GridCardsComponent implements OnInit {
 
-  cardSelected: Card;
   @Input() collectionCards: Card[];
+
+  
 
   constructor(
     private cardsServices: CardsService,
-    private router: Router) {
-  }
+    private router: Router) {}
 
-  ngOnInit() { 
-  }
+  ngOnInit() {}
 
-  openViewcard(card: Card) {
-    this.cardSelected = card;
-    this.cardsServices.selectedCard = this.cardSelected;    
-    this.router.navigateByUrl('view-card');
+  clickedCard(card: Card) {    
+    this.cardsServices.selectedCard = card;    
   }
 
 }

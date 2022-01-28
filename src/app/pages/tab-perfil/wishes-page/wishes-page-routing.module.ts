@@ -14,7 +14,7 @@ const routes: Routes = [
       {
       path: 'GridCardsComponent',
       component: GridCardsComponent,
-      children: [
+      },
         {
         path: 'CardComponent',
         component: CardComponent,
@@ -25,9 +25,7 @@ const routes: Routes = [
           component: ViewCardPageModule
           }] 
         }]
-      }]
-  }
-];
+  }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

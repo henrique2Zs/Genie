@@ -22,7 +22,11 @@ export class WishesPagePage implements OnInit {
       this.grid.collectionCards =  this.cardsService.collectionWished;   
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  openViewcard() {       
+    this.router.navigateByUrl('view-card');
   }
+
 
 }
