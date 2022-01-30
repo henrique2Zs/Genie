@@ -16,7 +16,8 @@ import { CardComponent } from 'src/app/components/card/card.component';
     IonicModule,
     LikedPageRoutingModule
   ],
-  declarations: [LikedPage,
+  declarations: [
+    LikedPage,
     CardComponent]
 })
 export class LikedPageModule {}

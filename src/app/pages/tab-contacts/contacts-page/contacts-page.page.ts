@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 export class ContactsPage implements OnInit {
  
   contactSelected: User;
+  collectionUsers= this.contactsService.getContactsArray();
+  
   
   constructor(
     private router: Router,
@@ -28,6 +30,5 @@ export class ContactsPage implements OnInit {
 
   viewPageContact() {
     this.router.navigateByUrl('view-contacts');
-    console.log(this.contactsService.contactSelected.fullname)
   }
 }

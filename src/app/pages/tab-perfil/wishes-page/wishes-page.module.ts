@@ -8,6 +8,7 @@ import { WishesPagePageRoutingModule } from './wishes-page-routing.module';
 import { WishesPagePage } from './wishes-page.page';
 import { GridCardsComponent } from 'src/app/components/grid/cards/grid-cards.component';
 import { CardComponent } from 'src/app/components/card/card.component';
+import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
 
 @NgModule({
   imports: [
@@ -15,11 +16,10 @@ import { CardComponent } from 'src/app/components/card/card.component';
     FormsModule,
     IonicModule,
     WishesPagePageRoutingModule,
+    GridCardsComponentModule
   ],
   declarations: [
     WishesPagePage,
-    GridCardsComponent,
-    CardComponent
   ]
 })
 export class WishesPagePageModule {}

@@ -12,8 +12,16 @@ export class ContactsService {
   
   constructor() {
     //Pueba: Lista de contactos de un usuario
-    this.contactsMap.set("aa", new User("aa", "alex a"));
-    this.contactsMap.set("bb", new User("bb", "bola b"));
+    let user1 = new User("aa", "alex a");
+    let user2 = new User("bb", "bola b");
+    this.contactsMap.set("aa", user1);
+    this.contactsMap.set("bb", user2);
+    /*
+    user1.sendCard(1); 
+    user1.cardsSentAnswers.set(1, "liked")
+    user2.sendCard(2);
+    user2.cardsSentAnswers.set(2, "unliked")
+    */
     this.contactsArray.push(this.contactsMap.get("aa"));
     this.contactsArray.push(this.contactsMap.get("bb"));
    }

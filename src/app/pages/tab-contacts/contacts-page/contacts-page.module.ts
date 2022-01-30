@@ -19,9 +19,9 @@ import { ContactsComponent } from 'src/app/components/list/contacts/contacts.com
   declarations: [
     ContactsPage,
     ContactsComponent
-  ],
+  ],/*
   entryComponents: [
     ContactsComponent
-  ]
+  ] */
 })
 export class ContactsPageModule {}

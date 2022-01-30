@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'view-contacts',
     loadChildren: () => import('./pages/tab-contacts/view-contacts/view-contacts.module').then( m => m.ViewContactsPageModule)
+  },
+  {
+    path: 'contacts-sent',
+    loadChildren: () => import('./pages/tab-cards/sent/contacts-sent/contacts-sent.module').then(m => m.ContactsSentPageModule)
   }
 ];
 

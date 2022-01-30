@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">     
+<ion-content contenteditable="false" [fullscreen]="true">     
     <h1 class="title-content-tab" aligment="center">Tallas</h1>     
-    <info-perfil [user]="user"></info-perfil>
+    <info-perfil contenteditable="false" [user]="user"></info-perfil>
     <h1>Wished list</h1>
     <grid-cards [collectionCards]="user.cardsWishes"></grid-cards>
 </ion-content>

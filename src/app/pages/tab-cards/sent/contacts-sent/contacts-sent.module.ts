@@ -4,26 +4,25 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SentPageRoutingModule } from './sent-routing.module';
+import { ContactsSentPageRoutingModule } from './contacts-sent-routing.module';
 
-import { SentPage } from './sent.page';
-
+import { ContactsSentPage } from './contacts-sent.page';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
-import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
 import { CardComponentModule } from 'src/app/components/card/card.component.module';
+import { ContactsComponentModule } from 'src/app/components/list/contacts/card.component.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SentPageRoutingModule,
-    GridCardsComponentModule,
-    CardComponentModule
+    ContactsSentPageRoutingModule,
+    CardComponentModule,
+    ContactsComponentModule
   ],
   declarations: [
-    SentPage,
+    ContactsSentPage
   ]
 })
-export class SentPageModule {}
+export class ContactsSentPageModule {}

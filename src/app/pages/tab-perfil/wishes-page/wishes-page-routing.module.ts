@@ -10,21 +10,11 @@ const routes: Routes = [
   {
     path: '',
     component: WishesPagePage,
-    children: [
-      {
-      path: 'GridCardsComponent',
-      component: GridCardsComponent,
-      },
-        {
-        path: 'CardComponent',
-        component: CardComponent,
-       
-        children: [
+    children: [     
           {
           path: 'ViewCardPage',
           component: ViewCardPageModule
-          }] 
-        }]
+          }]       
   }];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/class/user';
 import { ContactsService } from 'src/app/services/contacts.service';
 
@@ -9,8 +9,9 @@ import { ContactsService } from 'src/app/services/contacts.service';
 })
 export class ContactsComponent implements OnInit {
 
+  @Input() collectionUsers: User[];
   statusSelection:'true';
-  contactSelected: User;
+  contactSelected = (user: User) => this.contactsService.contactSelected=user;
 
   constructor(private contactsService: ContactsService) { }
 

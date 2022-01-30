@@ -8,7 +8,7 @@ import { ViewContactsPageRoutingModule } from './view-contacts-routing.module';
 
 import { ViewContactsPage } from './view-contacts.page';
 import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
-import { GridCardsComponent } from 'src/app/components/grid/cards/grid-cards.component';
+
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import { GridCardsComponent } from 'src/app/components/grid/cards/grid-cards.com
   declarations: [
     ViewContactsPage,
     InfoPerfilComponent,
-    GridCardsComponent
+  
   ]
 })
 export class ViewContactsPageModule {}

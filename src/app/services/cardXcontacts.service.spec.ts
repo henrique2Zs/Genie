@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { cardXcontactsService } from './contacts-xcards.service';
+import { CardXcontactsService } from './cardXcontacts.service';
 
 describe('ContactsXcardsService', () => {
-  let service: cardXcontactsService;
+  let service: CardXcontactsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(cardXcontactsService);
+    service = TestBed.inject(CardXcontactsService);
   });
 
   it('should be created', () => {

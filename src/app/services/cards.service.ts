@@ -57,8 +57,9 @@ export class CardsService {
   public buildCardsBuilt(){
     this.buildCards(this.numsBuilt, this.collectionBuilt);
   }
-  public buildCardsSent(){
+  public getCardsSent(): Card[] {
     this.buildCards(this.numsSent, this.collectionSent);
+    return this.collectionSent
   }
   public buildCardsLiked(){
     this.buildCards(this.numsLiked, this.collectionLiked);
@@ -71,8 +72,8 @@ export class CardsService {
   }
 
   buildCards(cardsnum: number[], collection: Card[]): void {        
-    for (let num = 0; num < (cardsnum.length); num++) {
-       collection.push(this.cards.get(cardsnum[num]));      
+    for (let num of cardsnum) {      
+       collection.push(this.cards.get(num));      
     }
   }
 

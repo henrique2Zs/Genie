@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BuildPageRoutingModule } from './build-routing.module';
 
 import { BuildPage } from './build.page';
-import { GridCardsComponent } from 'src/app/components/grid/cards/grid-cards.component';
+
 import { CardComponent } from 'src/app/components/card/card.component';
 
 @NgModule({

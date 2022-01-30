@@ -1,6 +1,6 @@
-<ion-list lines="inset" class="listContacts">
-  <ion-item-sliding *ngFor="let user of this.contactsService.getContactsArray()">
-    <ion-item (click)="this.contactsService.contactSelected=user">
+
+  <ion-item-sliding *ngFor="let user of collectionUsers">
+    <ion-item (click)="contactSelected(user)">
       <ion-radio class="selectionContact" slot="start"></ion-radio>
       <ion-icon slot=start name="person" color="primary" size="large"></ion-icon>
       <ion-label value="user.fullname">{{user.fullname}}</ion-label>
@@ -9,4 +9,3 @@
       </ion-item-options>
     </ion-item>
   </ion-item-sliding>
-</ion-list>
