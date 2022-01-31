@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="share-social" color="primary" size="large" slot="start"></ion-icon>
+    <ion-icon name="trash" color="primary" size="large" slot="end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <card-component (click)="openNewViewcard()" [card]="cardNew" contenteditable="false"></card-component>     
+
+      <card-component *ngFor="let card of this.cardsService.collectionBuilt" [card]=card (click)="openViewcard(card)"
+        contenteditable="false"></card-component>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

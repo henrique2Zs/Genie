@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contactos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <div>
+      <ion-item>
+        <ion-icon id="icon-addContact" (click)="addClicked='true'" slot=start name="add-circle"
+          color="primary" size="large"></ion-icon>
+         <ion-input *ngIf=addClicked placeholder="Add a contact"></ion-input>
+        <ion-icon (click)="removeContact()" slot=end name="trash" color="primary" size="large"></ion-icon>
+      </ion-item>
+    </div>
+    <div></div>
+  </ion-header>
+  <ion-content>
+    
+      <!-- <ion-label routerLink='/app/list/contacts/contacts/#ion-label-pok'></ion-label> -->
+      <app-contacts [collectionUsers]="this.collectionUsers" hiddenRadio="false" enabled="false" (click)="viewPageContact()"></app-contacts>
+  
+  </ion-content>
+</ion-content>

@@ -1,0 +1,11 @@
+
+  <ion-item-sliding *ngFor="let user of collectionUsers">
+    <ion-item (click)="contactSelected(user)">
+      <ion-radio class="selectionContact" slot="start"></ion-radio>
+      <ion-icon slot=start name="person" color="primary" size="large"></ion-icon>
+      <ion-label value="user.fullname">{{user.fullname}}</ion-label>
+      <ion-item-options side="start">
+        <ion-item-option (click)="delete(item)">delete</ion-item-option>
+      </ion-item-options>
+    </ion-item>
+  </ion-item-sliding>

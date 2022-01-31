@@ -1,0 +1,10 @@
+<ion-content>
+  <ion-slides page="true">
+    <ion-slide *ngFor="let card of this.cardsService.collectionBuilt">      
+      <card-component [card]=card contenteditable="false"></card-component>
+      
+    </ion-slide>
+    
+  </ion-slides>
+  <ion-icon name="share-social" color="primary" size="large" slot="end"></ion-icon>
+</ion-content>
