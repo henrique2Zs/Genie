@@ -71,4 +71,20 @@ export class CardXcontactsService {
       this.cardsService.numsSent.push(numcard)
     }
   }
+
+  getCardsAnswerOfSelected(): Map<string, Card[]> {
+    let user = this.contactsService.contactSelected
+    let mapAnswers = user.cardsSentAnswers //<numberCard, stringAnswer>
+    let mapCardsXanswers = new Map<string, Card[]>()
+    for (let ans of mapAnswers) {
+      let answer = mapAnswers.get(ans[0])
+      let cards: Card[] = new Array
+      if (mapCardsXanswers.has(answer)) {
+        cards = mapCardsXanswers.get(answer)
+      }
+      cards.push(this.cardsService.getAcard(ans[0]))
+      mapCardsXanswers.set(answer, cards)
+    }
+    return mapCardsXanswers
+  }
 }

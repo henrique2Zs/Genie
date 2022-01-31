@@ -48,6 +48,10 @@ export class CardsService {
     return this.cards;
   }
 
+  getAcard(num: number): Card {
+    return this.cards.get(num)
+  }
+
   public put(card: Card): void {
     this.cards.set(card.id, card);
     //push card into db

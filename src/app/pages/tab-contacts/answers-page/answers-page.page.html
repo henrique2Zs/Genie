@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Answers' contacts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-contacts [collectionUsers]="this.collectionUsers" hiddenRadio="false" enabled="false" (click)="viewAnswers()">
+  </app-contacts>
+</ion-content>
