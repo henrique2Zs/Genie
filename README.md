@@ -1,5 +1,6 @@
 # Genie
 
+<<<<<<< HEAD
 Genie del inglés de (Genio en castellano) es una aplicación para crear listas de regalos que se desean recibir y tener estas listas compartidas con los contactos. Además, tiene la característica principal de sugerir secretamente regalos a los contactos, pues cada usuario recibirá sugestiones de regalos para evaluar su deseo de recibirlo.
 
 Los regalos son representados por la inclusión de "Cards" o cartas con imagen y/o una descripción del produto y/o enlace hacia una página web que contenga su deseo. Esos son incluídos por los usuarios que pueden compartirlos con otros de su lista de contactos. En los perfiles de los usuarios podrán incluir información de sus tallas u otras útiles para la compra de un regalo.
@@ -34,3 +35,24 @@ Las imagens de las pantallas abajo han sido dibujadas con el [Invisionapp Freeha
 
 
 
+=======
+##Semana 1
+- Instalación de dependencias de para Ionic
+- Creacción de pestañas para la página principal
+- Diseño básico de las páginas iniciales de las pestañas
+- Enrutamiento de páginas
+
+
+##Semana 2
+- Creaccíon de un borrador del componente Contacts que utiliza el componente "ion-list" y "ion-item"
+- Creacion del componente Cardscomponent que utiiza "ion-cards"
+- Cambio del entorno en máquina local para un contenedor de Docker
+- Reordanamiento de páginas a nuevas carpetas y de la estructura de ficheros en general
+- Creacción de subpestañas dentro de las pestañas anteriores principales
+
+
+##Semana 3
+- Nuevo servicio CardsService para el provimiento centralizado de los cards a las distintas páginas
+- Cambio de la implementación de WhishesPage para utilización del servicio
+- Nueva lógica y servicio para páginas WishesPages y Sent de la pestañas Cards
+>>>>>>> 6a42c22aac89e122301b3eb19029941813622d7a
