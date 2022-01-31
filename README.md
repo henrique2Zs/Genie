@@ -1,5 +1,7 @@
 # Genie
 
+El anteproyecto se encuentra en la rama anteproyecto.
+
 ##Semana 1
 - Instalación de dependencias de para Ionic
 - Creacción de pestañas para la página principal
