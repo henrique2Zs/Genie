@@ -69,6 +69,14 @@ const routes: Routes = [
   {
     path: 'contacts-sent',
     loadChildren: () => import('./pages/tab-cards/sent/contacts-sent/contacts-sent.module').then(m => m.ContactsSentPageModule)
+  },
+  {
+    path: 'answers-page',
+    loadChildren: () => import('./pages/tab-contacts/answers-page/answers-page.module').then( m => m.AnswersPagePageModule)
+  },
+  {
+    path: 'view-answers',
+    loadChildren: () => import('./pages/tab-contacts/view-answers/view-answers.module').then( m => m.ViewAnswersPageModule)
   }
 ];
 

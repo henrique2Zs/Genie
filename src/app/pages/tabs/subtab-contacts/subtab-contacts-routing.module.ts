@@ -19,6 +19,11 @@ const routes: Routes = [
           .then(m => m.ContactsPageModule)
         },
         {
+          path: 'answers',
+          loadChildren: () => import('../../tab-contacts/answers-page/answers-page.module')
+          .then( m => m.AnswersPagePageModule)
+        },
+        {
           path: '',
           redirectTo: 'list',
           pathMatch: 'full'

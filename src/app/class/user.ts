@@ -18,7 +18,7 @@ export class User {
     infoAdditional: string= "";
     cardsWishes: number[] = new Array;
     cardsSent: number[] = new Array; 
-    cardsSentAnswers: Map<number, string> = new Map<number, string>()// string= liked, unliked or ""  
+    cardsSentAnswers = new Map<number, string>()// string= liked, unliked or ""  
 
     constructor(nickname: string,fullname: string) {
         this.nickname = nickname;

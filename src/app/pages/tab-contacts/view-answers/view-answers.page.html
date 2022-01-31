@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title-header-tab">{{user.fullname}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <h1>Liked</h1>
+  <grid-cards [collectionCards]="this.cardsLiked"></grid-cards>
+
+  <h1>Unliked</h1>
+  <grid-cards [collectionCards]="this.cardsUnliked"></grid-cards>
+
+  <h1>No answer</h1>
+  <grid-cards [collectionCards]="this.cardsNoanswer"></grid-cards>
+
+</ion-content>
