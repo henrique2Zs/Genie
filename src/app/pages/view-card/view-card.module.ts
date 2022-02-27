@@ -10,12 +10,14 @@ import { ViewCardPage } from './view-card.page';
 import { CardComponent } from 'src/app/components/card/card.component';
 
 import { ContentUneditableDirective } from 'src/app/directives/content-uneditable.directive';
+import { ContactsComponentModule } from 'src/app/components/list/contacts/card.component.module';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ViewCardPageRoutingModule
+    ViewCardPageRoutingModule,
+    ContactsComponentModule
   ],
   declarations: [
     ViewCardPage,

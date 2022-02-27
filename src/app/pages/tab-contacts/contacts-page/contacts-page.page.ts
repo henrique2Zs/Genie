@@ -11,19 +11,29 @@ import { Router } from '@angular/router';
 export class ContactsPage implements OnInit {
  
   contactSelected: User;
-  collectionUsers= this.contactsService.getContactsArray();
+  contactsList: User[] = new Array
   
   
   constructor(
     private router: Router,
-    private contactsService: ContactsService) { }
+    private contactsServs: ContactsService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.buildList()
+   }
 
   addContact() { //TODO
   }
 
+  buildList() {
+    for (let user of this.contactsServs.getContactsMap()) {
+      this.contactsList.push(user[1])
+    }    
+  }
+
   removeContact() { //TODO
+    
+    this.buildList()
    }
 
   viewPageContact() {
