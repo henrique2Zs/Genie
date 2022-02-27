@@ -13,4 +13,16 @@
     <card-component [(card)]="card"></card-component>
     <ion-button (onclick)="this.cardsServices.put([card])">Save</ion-button>
   </ion-card>
+  <ion-item>
+    <ion-icon (click)="openContactList='true'" name="share-social" color="primary" size="large" slot="start"></ion-icon>
+  </ion-item>
+  <span *ngIf="openContactList">
+    <ion-item>
+      <ion-button (click)="sendAcard()" color="secondary" strong="true" expand="block" slot="end">Send
+        <ion-icon name="paper-plane" color="primary" size="small" slot="end"></ion-icon>
+      </ion-button>
+    </ion-item>
+      <app-contacts [collectionUsers]="contactsList"></app-contacts>   
+  </span>
+  
 </ion-content>

@@ -23,7 +23,7 @@ export class CardXcontactsService {
       let users: User[] = new Array
       let user = this.contactsService.contactsMap.get("aa")
       users.push(user)
-      this.sendAcard(1, users)
+      //this.sendAcard(1, users)
   }
 
   private builNumbersCardMap() {
@@ -65,11 +65,14 @@ export class CardXcontactsService {
 
   sendAcard(numcard: number, contacts: User[]) {
     for (let user of contacts) {
-      user.cardsSentAnswers.set(numcard, "")
+      if (!user.cardsSentAnswers.has(numcard))
+        user.cardsSentAnswers.set(numcard, "")
     }
     if (!this.cardsService.numsSent.includes(numcard)) {
+      console.log("NumsSent"+this.cardsService.numsSent+"num que no est'a incluido:"+numcard)
       this.cardsService.numsSent.push(numcard)
     }
+    this.cardsService.buildCardsSent()
   }
 
   getCardsAnswerOfSelected(): Map<string, Card[]> {

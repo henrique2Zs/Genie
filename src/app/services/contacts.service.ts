@@ -37,8 +37,12 @@ export class ContactsService {
     this.contactsMap.set(nickname, new User("nickname",""))
     this.contactsArray.push(this.contactsMap.get(nickname));
   }
+
+  getContact(nickname: string): User {
+    return this.contactsMap.get(nickname)
+  }
    
-  getContact(): User{
+  getContactSelected(): User{
     return this.contactSelected;
   }
 
