@@ -11,7 +11,7 @@
     <ion-row>
       <card-component (click)="openNewViewcard()" [card]="cardNew" contenteditable="false"></card-component>     
 
-      <card-component *ngFor="let card of this.cardsService.collectionBuilt" [card]=card (click)="openViewcard(card)"
+      <card-component *ngFor="let card of collectionBuilt" [card]=card (click)="openViewcard(card)"
         contenteditable="false"></card-component>
 
     </ion-row>

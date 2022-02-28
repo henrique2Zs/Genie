@@ -12,6 +12,7 @@ export class BuildPage implements OnInit {
 
   cardNew: Card = new Card(0, 'www. .com', './add-circle.svg', 'NEW CARD', '', 0, '');
   cardNeweditable: Card = new Card();
+  collectionBuilt: Card[] = new Array
 
   constructor(
     private router: Router,
@@ -20,6 +21,7 @@ export class BuildPage implements OnInit {
     this.cardsService.numsBuilt.push(2);
     this.cardsService.numsBuilt.push(1);
     this.cardsService.buildCardsBuilt();
+    this.collectionBuilt = this.cardsService.collectionBuilt
   }
 
   ngOnInit() { }

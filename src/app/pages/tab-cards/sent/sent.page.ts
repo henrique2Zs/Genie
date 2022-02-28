@@ -12,16 +12,15 @@ import { CardXcontactsService} from 'src/app/services/cardXcontacts.service';
 })
 export class SentPage implements OnInit {
 
-  collectionSent: Card[] = this.serviceCards.getCardsSent();
+  collectionSent: Card[] = new Array
 
   constructor(
     private router: Router,
     private serviceSents: CardXcontactsService,
     private serviceCards: CardsService) 
-    {  
-      // Teste
-      // this.collectionSent = this.serviceCards.getCardsSent();  
-      
+    {        
+      this.serviceCards.buildCardsSent()
+      this.collectionSent = this.serviceCards.collectionSent;        
     }
     
   ngOnInit() {
