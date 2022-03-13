@@ -12,6 +12,9 @@ export class ContactsPage implements OnInit {
  
   contactSelected: User;
   contactsList: User[] = new Array
+  includedByThis: User[] = new Array
+  includedInAnother: User[] = new Array
+  inputName = ""
   
   
   constructor(
@@ -22,18 +25,21 @@ export class ContactsPage implements OnInit {
     this.buildList()
    }
 
-  addContact() { //TODO
+  addContact() {
+    this.contactsServs.setContact(this.inputName)
+    this.includedByThis = this.contactsServs.getIncludedByThisArray()    
+    this.inputName = ""
   }
 
   buildList() {
-    for (let user of this.contactsServs.getContactsMap()) {
-      this.contactsList.push(user[1])
-    }    
+    this.contactsList = this.contactsServs.getContactsArray()
+    this.includedByThis = this.contactsServs.getIncludedByThisArray()
+    this.includedInAnother = this.contactsServs.getIncludedInAnotherArray()
   }
 
   removeContact() { //TODO
     
-    this.buildList()
+    //this.buildList()
    }
 
   viewPageContact() {

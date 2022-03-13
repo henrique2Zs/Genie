@@ -6,9 +6,16 @@ import { User } from '../class/user';
 })
 export class ContactsService {
 
-  contactsMap: Map<string, User> = new Map<string, User>();
   contactSelected: User;
+
+  contactsMap: Map<string, User> = new Map<string, User>();  
   contactsArray: User[] = new Array;
+
+  includedByThis: Map<string, User> = new Map<string, User>(); 
+  includedByThisArray: User[] = new Array
+
+  includedInAnother: Map<string, string> = new Map<string, string>(); 
+  includedInAnotherArray: User[] = new Array
   
   constructor() {
     //Pueba: Lista de contactos de un usuario
@@ -30,12 +37,18 @@ export class ContactsService {
     //TODO
   }
   /*
-  Incluye contact in a map para el orden alfabético y búsqueda
-  y lo referencia en un Array utilizado en algunas clases
+  Incluye contact in a map para mantener en el orden alfabético
   */ 
   setContact(nickname: string): void {
-    this.contactsMap.set(nickname, new User("nickname",""))
-    this.contactsArray.push(this.contactsMap.get(nickname));
+    this.includedByThis.set(nickname, new User (nickname, nickname))
+    this.includedByThisArray = new Array
+    for (let user of this.includedByThis) {
+      this.includedByThisArray.push(user[1])
+    }    
+  }
+
+  removeContact(nickname: string) {
+    this.contactsMap.delete(nickname)
   }
 
   getContact(nickname: string): User {
@@ -52,5 +65,13 @@ export class ContactsService {
   
   getContactsArray(): User[] {
     return this.contactsArray;
+  }
+
+  getIncludedByThisArray(): User[] {
+    return this.includedByThisArray
+  }
+
+  getIncludedInAnotherArray(): User[] {
+    return this.includedInAnotherArray
   }
 }
