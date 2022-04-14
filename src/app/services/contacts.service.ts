@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { enableDebugTools } from '@angular/platform-browser';
 import { User } from '../class/user';
 
 @Injectable({
@@ -8,47 +9,58 @@ export class ContactsService {
 
   contactSelected: User;
 
-  contactsMap: Map<string, User> = new Map<string, User>();  
-  contactsArray: User[] = new Array;
+  contactsMap:      Map<string, User> = new Map<string, User>();  
+  contactsArray:    User[] = new Array;
 
-  includedByThis: Map<string, User> = new Map<string, User>(); 
-  includedByThisArray: User[] = new Array
+  includedByThis:       Map<string, User> = new Map<string, User>(); 
+  includedByThisArray:  User[] = new Array;
 
-  includedInAnother: Map<string, string> = new Map<string, string>(); 
-  includedInAnotherArray: User[] = new Array
+  includedInAnother:      Map<string, User> = new Map<string, User>(); 
+  includedInAnotherArray: User[] = new Array;
   
   constructor() {
     //Pueba: Lista de contactos de un usuario
     let user1 = new User("aa", "alex a");
     let user2 = new User("bb", "bola b");
+    let user3 = new User("cc", "cassie");
+    user1.cardsWishes.push(1);
+    user2.cardsWishes.push(2);
     this.contactsMap.set("aa", user1);
     this.contactsMap.set("bb", user2);
-    /*
-    user1.sendCard(1); 
-    user1.cardsSentAnswers.set(1, "liked")
-    user2.sendCard(2);
-    user2.cardsSentAnswers.set(2, "unliked")
-    */
-    this.contactsArray.push(this.contactsMap.get("aa"));
-    this.contactsArray.push(this.contactsMap.get("bb"));
+    this.includedInAnother.set("cc", user3)
+    this.contactsArray = this.buildArrayFromMap(this.contactsMap);
+    this.includedByThisArray = this.buildArrayFromMap(this.includedByThis);
+    this.includedInAnotherArray = this.buildArrayFromMap(this.includedInAnother);
    }
 
   searchContactIntoDB(nickname: string){
     //TODO
   }
   /*
-  Incluye contact in a map para mantener en el orden alfabético
+  Incluye contact in a map para mantener en el orden alfabético y replica el mapa en su array
   */ 
   setContact(nickname: string): void {
-    this.includedByThis.set(nickname, new User (nickname, nickname))
-    this.includedByThisArray = new Array
-    for (let user of this.includedByThis) {
-      this.includedByThisArray.push(user[1])
-    }    
+    this.includedByThis.set(nickname, new User (nickname, nickname));    
+    this.includedByThisArray = this.buildArrayFromMap(this.includedByThis);
   }
 
-  removeContact(nickname: string) {
-    this.contactsMap.delete(nickname)
+  removeContact() {    
+    let nickname = this.getContactSelected().nickname
+
+    if (this.contactsMap.delete(nickname))
+      this.contactsArray = this.buildArrayFromMap(this.contactsMap)
+      else if (this.includedByThis.delete(nickname))
+        this.includedByThisArray = this.buildArrayFromMap(this.includedByThis)
+        else if (this.includedInAnother.delete(nickname))
+          this.includedInAnotherArray = this.buildArrayFromMap(this.includedInAnother)
+  }
+
+  buildArrayFromMap(contactsMap: Map<string, User>): User[] {
+    let contactsArrayNew: User[] = new Array;
+    for (let user of contactsMap) {
+      contactsArrayNew.push(user[1]);
+    }
+    return contactsArrayNew;
   }
 
   getContact(nickname: string): User {

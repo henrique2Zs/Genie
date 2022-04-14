@@ -10,9 +10,11 @@ import { ContactsService } from 'src/app/services/contacts.service';
 export class ContactsComponent implements OnInit {
 
   @Input() collectionUsers: User[];
-  statusSelection:'true';
-  contactSelected = (user: User) => this.contactsService.contactSelected=user;
-
+  @Input() hideTrash = true
+  @Input() hideUserRadio = false
+  
+  contactSelected = (user: User) => this.contactsService.contactSelected=user
+  
   constructor(private contactsService: ContactsService) { }
 
   ngOnInit() {}
@@ -20,5 +22,4 @@ export class ContactsComponent implements OnInit {
   showSelection() {
     this.contactsService.contactsMap.values
   }
-
 }

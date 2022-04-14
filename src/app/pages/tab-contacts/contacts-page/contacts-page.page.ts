@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ContactsService } from 'src/app/services/contacts.service';
 import { User } from 'src/app/class/user';
 import { Router } from '@angular/router';
@@ -15,8 +15,7 @@ export class ContactsPage implements OnInit {
   includedByThis: User[] = new Array
   includedInAnother: User[] = new Array
   inputName = ""
-  
-  
+
   constructor(
     private router: Router,
     private contactsServs: ContactsService) { }
@@ -26,23 +25,48 @@ export class ContactsPage implements OnInit {
    }
 
   addContact() {
-    this.contactsServs.setContact(this.inputName)
-    this.includedByThis = this.contactsServs.getIncludedByThisArray()    
-    this.inputName = ""
+    this.contactsServs.setContact(this.inputName)    
+    this.inputName = ""    
   }
 
   buildList() {
-    this.contactsList = this.contactsServs.getContactsArray()
+    this.contactsList = new Array    
+    this.contactsList = this.contactsServs.getContactsArray()    
     this.includedByThis = this.contactsServs.getIncludedByThisArray()
     this.includedInAnother = this.contactsServs.getIncludedInAnotherArray()
   }
 
+  rebuildList() {
+    this.contactsList = new Array
+    this.includedByThis = new Array
+    this.includedInAnother = new Array
+    this.buildList()
+  }
+
   removeContact() { //TODO
-    
-    //this.buildList()
+    this.contactsServs.removeContact()  
    }
 
-  viewPageContact() {
-    this.router.navigateByUrl('view-contacts');
+  clickedOnItem(event: Event) {   
+    let eventTarget = <HTMLElement>event.target   
+    // Check if the click on the item was on the trash icon or on anywhere of the item 
+    if (eventTarget.tagName === 'ION-ICON' && eventTarget.attributes.getNamedItem('name').value.toString() === 'trash') {
+      this.removeContact()
+      this.buildList()
+    }
+    // Check if the user is a contact to don't open a blank profile's page
+    else if (this.contactsServs.getContactsMap().has(this.contactsServs.getContactSelected().nickname)) {
+    this.router.navigateByUrl('view-contacts')}
   }
 }
+
+    /*
+    console.log(eventTarget.toString())
+    console.log(eventTarget.TEXT_NODE)
+    console.log(eventTarget.ATTRIBUTE_NODE)
+    
+    let nameEvent = event.composedPath();
+      if (nameEvent[4] !== undefined) {
+        console.log(nameEvent)
+        console.log(nameEvent[4].toString());}
+    */        

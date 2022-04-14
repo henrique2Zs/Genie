@@ -1,4 +1,4 @@
-<ion-header> 
+<ion-header>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -7,8 +7,10 @@
       <ion-item>
         <ion-icon *ngIf=!addClicked id="icon-addContact" slot=start name="add-circle" color="gray" size="large"
           (click)="addContact('testContactPage')"></ion-icon>
-        <ion-icon *ngIf=addClicked id="icon-addContact" (click)="addContact()" slot=start
-          name="add-circle" color="primary" size="large"></ion-icon>
+        <span (click)="rebuildList()">
+          <ion-icon *ngIf=addClicked id="icon-addContact" (click)="addContact()" slot=start name="add-circle"
+            color="primary" size="large"></ion-icon>
+        </span>
         <ion-input [(ngModel)]="inputName" (ionInput)="addClicked='true'" placeholder="Add a contact"></ion-input>
       </ion-item>
     </div>
@@ -17,14 +19,14 @@
 
   <ion-content>
 
-    <app-contacts [collectionUsers]="this.contactsList" hiddenRadio="false" enabled="false" (click)="viewPageContact()">
-    </app-contacts>
+    <app-contacts (click)="clickedOnItem($event)" [collectionUsers]="this.contactsList" [hideTrash]="false" 
+      [hideUserRadio]="true" ></app-contacts>
     <h2>Sent from me</h2>
-    <app-contacts [collectionUsers]="this.includedByThis" hiddenRadio="false" enabled="false"
-      (click)="viewPageContact()"></app-contacts>
+    <app-contacts [collectionUsers]="includedByThis" [hideTrash]="false" [hideUserRadio]="true"
+      (click)="clickedOnItem($event)"></app-contacts>
     <h2>Sent to me</h2>
-    <app-contacts [collectionUsers]="this.includedInAnother" hiddenRadio="false" enabled="false"
-      (click)="viewPageContact()"></app-contacts>
+    <app-contacts [collectionUsers]="this.includedInAnother" [hideTrash]="false" [hideUserRadio]="true"
+      (click)="clickedOnItem($event)"></app-contacts>
 
   </ion-content>
 </ion-content>

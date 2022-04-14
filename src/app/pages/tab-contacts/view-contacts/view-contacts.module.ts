@@ -8,6 +8,7 @@ import { ViewContactsPageRoutingModule } from './view-contacts-routing.module';
 
 import { ViewContactsPage } from './view-contacts.page';
 import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
+import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
 
 
 @NgModule({
@@ -15,12 +16,12 @@ import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-pe
     CommonModule,
     FormsModule,
     IonicModule,
-    ViewContactsPageRoutingModule
+    ViewContactsPageRoutingModule,
+    GridCardsComponentModule
   ],
   declarations: [
     ViewContactsPage,
-    InfoPerfilComponent,
-  
+    InfoPerfilComponent,    
   ]
 })
 export class ViewContactsPageModule {}
