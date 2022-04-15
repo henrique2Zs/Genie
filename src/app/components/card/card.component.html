@@ -1,11 +1,11 @@
-<ion-card button="true" type="button">
+<ion-card button="true" type="button" contenteditable="!readonly">
   <ion-card-content>
     <ion-card-title>
-      <ion-input [(ngModel)]="card.title" name="title" placeholder="Título descriptivo" type="text"></ion-input>
+      <ion-input [readonly]="readonly" [(ngModel)]="card.title" name="title" placeholder="Título descriptivo" type="text"></ion-input>
     </ion-card-title>
 
-    <p><img [src]="card.src" width="80%"></p><br>
-    <ion-input [(ngModel)]="card.link" name="enlace" placeholder="Enlace de referencia (opcional)" type="url"></ion-input>
-    <ion-textarea [(ngModel)]="card.description" name="subtitle" placeholder="Descripcion"></ion-textarea>
+    <p><img [contenteditable]="!readonly" [src]="card.src" width="80%"></p><br>
+    <ion-input [readonly]="readonly" [(ngModel)]="card.link" name="enlace" placeholder="Enlace de referencia (opcional)" type="url"></ion-input>
+    <ion-textarea [readonly]="readonly" [(ngModel)]="card.description" name="subtitle" placeholder="Descripcion"></ion-textarea>
   </ion-card-content>
 </ion-card>

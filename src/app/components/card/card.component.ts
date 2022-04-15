@@ -12,6 +12,7 @@ import { Card } from 'src/app/class/card';
 export class CardComponent implements OnInit {
 
   @Input() card: Card;
+  @Input() readonly = true
   
   constructor () { }
 

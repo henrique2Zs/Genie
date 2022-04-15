@@ -53,7 +53,9 @@ export class CardsService {
   }
 
   public put(card: Card): void {
-    this.cards.set(card.id, card);
+    this.cards.set(card.id, card);    
+    this.numsBuilt.push(card.id)
+    this.buildCardsBuilt()
     //push card into db
     //pull cards from db
   }
@@ -74,7 +76,10 @@ export class CardsService {
     this.buildCards(this.numsWished, this.collectionWished);
   }
 
-  buildCards(cardsnum: number[], collection: Card[]): void {        
+  /*
+  * Refresh arrays of cards from arrays of number cards inside this service
+  */
+  private buildCards(cardsnum: number[], collection: Card[]): void {        
     let card: Card
     for (let num of cardsnum) {   
       card = this.cards.get(num)

@@ -1,4 +1,4 @@
-import { Component, OnInit, Type } from '@angular/core';
+import { Component, Input, OnInit, Type } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
 import { User } from 'src/app/class/user';
@@ -15,7 +15,8 @@ import { ContactsService } from 'src/app/services/contacts.service';
 export class ViewCardPage implements OnInit {
 
   ownerCard = true;
-  card: Card = new Card();
+  creating = false;
+  card: Card;
   openContactList = false
   contactsMap = new Map<string, User>();
   contactsList: User[] = new Array
@@ -50,6 +51,17 @@ export class ViewCardPage implements OnInit {
         contacts2send.push(this.contactService.getContact(nickname))
       }}
       this.cardXcontactService.sendAcard(this.card.id, contacts2send)    
+  }
+
+  cloneCard() {
+    this.card = this.card.clone()
+    this.creating = true
+  }
+
+  createCard() {
+    this.creating = false
+    this.cardsService.put(this.card)
+    this.router.navigateByUrl('tabs/subtab-cards/build')
   }
 
 }

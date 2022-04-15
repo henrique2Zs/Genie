@@ -64,12 +64,13 @@ export class CardXcontactsService {
   }
 
   sendAcard(numcard: number, contacts: User[]) {
+    // Include on self local data of a contact a answer empty
     for (let user of contacts) {
       if (!user.cardsSentAnswers.has(numcard))
         user.cardsSentAnswers.set(numcard, "")
     }
-    if (!this.cardsService.numsSent.includes(numcard)) {
-      console.log("NumsSent"+this.cardsService.numsSent+"num que no est'a incluido:"+numcard)
+    // Refresh those numbers of cards sent to anyone to print in Sent page
+    if (!this.cardsService.numsSent.includes(numcard)) {      
       this.cardsService.numsSent.push(numcard)
     }
     this.cardsService.buildCardsSent()
