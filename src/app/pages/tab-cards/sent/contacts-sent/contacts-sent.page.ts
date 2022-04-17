@@ -14,7 +14,6 @@ export class ContactsSentPage implements OnInit {
 
   collectionAnswersUsers: Map<string, User[]> = new Map<string, User[]>()
   usersLiked = () => this.collectionAnswersUsers.get("liked")
-  usersUnliked  = () => this.collectionAnswersUsers.get("unliked")
   usersNoAnswer = () => this.collectionAnswersUsers.get("")
   card= this.cardsService.selectedCard
 

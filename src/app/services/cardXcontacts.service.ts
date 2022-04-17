@@ -33,10 +33,10 @@ export class CardXcontactsService {
     for (let index of map) {
       let usr = index[1];
       // Iterate for each number card in the individual map of answers' of a user
-      for (let num of usr.cardsSentAnswers) {
+      for (let num of usr.cardsReceivedAnswers) {
         let answersUsers: Map<string, User[]> = new Map<string, User[]>(); //Start of <answers, User[]>
         let users: User[] = new Array
-        let answerOfUsr = usr.cardsSentAnswers.get(num[0])
+        let answerOfUsr = usr.cardsReceivedAnswers.get(num[0])
         if (this.sentNumCardXcontacts.has(num[0])) { // Check if there is the number's card in principal map
           answersUsers = this.sentNumCardXcontacts.get(num[0]);          
           users = answersUsers.get(answerOfUsr); // Take the array of users to refresh on next step
@@ -66,8 +66,8 @@ export class CardXcontactsService {
   sendAcard(numcard: number, contacts: User[]) {
     // Include on self local data of a contact a answer empty if doesn't there one
     for (let user of contacts) {
-      if (!user.cardsSentAnswers.has(numcard))
-        user.cardsSentAnswers.set(numcard, "")
+      if (!user.cardsReceivedAnswers.has(numcard))
+        user.cardsReceivedAnswers.set(numcard, "")
     }
     // Refresh those numbers of cards sent to anyone to print in Sent page
     if (!this.cardsService.numsSent.includes(numcard)) {      
@@ -78,7 +78,7 @@ export class CardXcontactsService {
 
   getCardsAnswerOfSelected(): Map<string, Card[]> {
     let user = this.contactsService.contactSelected
-    let mapAnswers = user.cardsSentAnswers //<numberCard, stringAnswer>
+    let mapAnswers = user.cardsReceivedAnswers //<numberCard, stringAnswer>
     let mapCardsXanswers = new Map<string, Card[]>()
     for (let ans of mapAnswers) {
       let answer = mapAnswers.get(ans[0])

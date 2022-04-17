@@ -14,8 +14,7 @@ export class ViewAnswersPage implements OnInit {
   
   user: User;
   mapCardsXanswers: Map<string, Card[]>
-  cardsLiked: Card[] = new Array
-  cardsUnliked: Card[] = new Array
+  cardsLiked: Card[] = new Array  
   cardsNoanswer: Card[] = new Array
 
   constructor(
@@ -32,7 +31,6 @@ export class ViewAnswersPage implements OnInit {
 
   makeCardsArray() {
     this.cardsLiked = this.mapCardsXanswers.get("liked")
-    this.cardsUnliked = this.mapCardsXanswers.get("unliked")
     this.cardsNoanswer = this.mapCardsXanswers.get("")
   }
 
