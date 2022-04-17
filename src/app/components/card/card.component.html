@@ -1,11 +1,23 @@
 <ion-card button="true" type="button" contenteditable="!readonly">
-  <ion-card-content>
+  <ion-card-header>
     <ion-card-title>
-      <ion-input [readonly]="readonly" [(ngModel)]="card.title" name="title" placeholder="Título descriptivo" type="text"></ion-input>
+      <ion-input [readonly]="readonly" [(ngModel)]="card.title" name="title" placeholder="Título descriptivo"
+        type="text"></ion-input>
     </ion-card-title>
+  </ion-card-header>
 
-    <p><img [contenteditable]="!readonly" [src]="card.src" width="80%"></p><br>
-    <ion-input [readonly]="readonly" [(ngModel)]="card.link" name="enlace" placeholder="Enlace de referencia (opcional)" type="url"></ion-input>
-    <ion-textarea [readonly]="readonly" [(ngModel)]="card.description" name="subtitle" placeholder="Descripcion"></ion-textarea>
+  <ion-card-content>
+    <p><img contenteditable="!readonly" [src]="card.src" width="80%"></p><br>
+    <ion-input [readonly]="readonly" [(ngModel)]="card.link" name="enlace" placeholder="Enlace de referencia (opcional)"
+      type="url"></ion-input>
+    <ion-textarea [readonly]="readonly" [(ngModel)]="card.description" name="subtitle" placeholder="Descripcion">
+    </ion-textarea>
+    <ion-item>
+      <ion-icon (click)="addInWishList()" *ngIf="!card.inWishList" slot=end name="list-outline" color="medium" size="large"></ion-icon>            
+      <ion-icon (click)="quitInWishList()" *ngIf="card.inWishList" slot=end name="list" color="primary" size="large"></ion-icon>  
+      <ion-icon (click)="addInLiked()" *ngIf="!card.liked" slot=end name="heart-outline" color="danger" size="large"></ion-icon>    
+      <ion-icon (click)="quitInLiked()" *ngIf="card.liked" slot=end name="heart" color="danger" size="large"></ion-icon>
+      <ion-icon slot="start" name="alert-circle-outline" color="danger"></ion-icon>
+    </ion-item>
   </ion-card-content>
 </ion-card>

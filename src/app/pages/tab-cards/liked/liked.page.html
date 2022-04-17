@@ -2,8 +2,8 @@
 
   <ion-grid>
     <ion-row>
-      <card-component *ngFor="let card of this.cardsService.collectionLiked" [card]=card 
-      (click)="openViewcard(card)" contenteditable="false"></card-component>
+      <card-component *ngFor="let card of this.collectionLiked" [card]=card 
+      (click)="openViewcard(card,$event)" contenteditable="false"></card-component>
     </ion-row>
   </ion-grid>
 </ion-content>

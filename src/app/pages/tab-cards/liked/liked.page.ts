@@ -9,20 +9,23 @@ import { CardsService } from 'src/app/services/cards.service';
   styleUrls: ['./liked.page.scss'],
 })
 export class LikedPage implements OnInit {
+  
+  collectionLiked: Card[] = new Array();
 
   constructor(
     private router: Router,
     private cardsService: CardsService
-  ) {
-    this.cardsService.numsLiked.push(2);
-    this.cardsService.numsLiked.push(1);
-    this.cardsService.buildCardsLiked();
+  ) {    
+    this.collectionLiked = this.cardsService.getCardsLiked();
   }
 
   ngOnInit() {}
 
-  openViewcard(cardClicked: Card) {
+  openViewcard(cardClicked: Card, event: Event) {
+    let eventTarget = <HTMLElement>event.target   
+    if (eventTarget.tagName !== 'ION-ICON') {
     this.cardsService.selectedCard = cardClicked;
     this.router.navigateByUrl('view-card');
+    }
   }
 }

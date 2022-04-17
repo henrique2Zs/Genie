@@ -17,16 +17,18 @@ export class SentPage implements OnInit {
   constructor(
     private router: Router,
     private serviceSents: CardXcontactsService,
-    private serviceCards: CardsService) 
+    private cardsService: CardsService) 
     {        
-      this.serviceCards.buildCardsSent()
-      this.collectionSent = this.serviceCards.collectionSent;        
+      this.collectionSent = this.cardsService.getCardsSent()       
     }
     
   ngOnInit() {
   }
 
-  cardClicked() {
-    this.router.navigateByUrl('contacts-sent');
+  openViewcard(event: Event) {
+    let eventTarget = <HTMLElement>event.target   
+    if (eventTarget.tagName !== 'ION-ICON') {      
+      this.router.navigateByUrl('contacts-sent');
+    }
   }
 }

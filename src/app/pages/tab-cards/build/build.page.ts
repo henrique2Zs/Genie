@@ -17,22 +17,25 @@ export class BuildPage implements OnInit {
   constructor(
     private router: Router,
     private cardsService: CardsService
-  ) {
-    this.cardsService.numsBuilt.push(2);
-    this.cardsService.numsBuilt.push(1);
-    this.cardsService.buildCardsBuilt();
-    this.collectionBuilt = this.cardsService.collectionBuilt
+  ) {    
+    this.collectionBuilt = this.cardsService.getCardsBuilt();    
   }
 
   ngOnInit() { }
 
-  openViewcard(cardClicked: Card) {
-    this.cardsService.selectedCard = cardClicked;
-    this.router.navigateByUrl('view-card');
+  openViewcard(cardClicked: Card, event: Event) {
+    let eventTarget = <HTMLElement>event.target   
+    if (eventTarget.tagName !== 'ION-ICON') {
+      this.cardsService.selectedCard = cardClicked;
+      this.router.navigateByUrl('view-card');
+    }
   }
 
-  openNewViewcard() {
-    this.cardsService.selectedCard = this.cardNeweditable;
-    this.router.navigateByUrl('view-card');
+  openNewViewcard(event: Event) {
+    let eventTarget = <HTMLElement>event.target   
+    if (eventTarget.tagName !== 'ION-ICON') {
+      this.cardsService.selectedCard = this.cardNeweditable;
+      this.router.navigateByUrl('view-card');
+    }
   }
 }

@@ -11,6 +11,8 @@ export class Card {
     description?: string = "";
     authorId: number = 0;
     lang: string = "";
+    liked = false
+    inWishList = false
     static totalCards = 0
    
     constructor(id?, link?,src?, title?,description?,authorId?,lang?) {
