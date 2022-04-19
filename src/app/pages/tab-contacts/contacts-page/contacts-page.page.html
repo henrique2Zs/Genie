@@ -25,7 +25,7 @@
     <app-contacts [collectionUsers]="includedByThis" [hideTrash]="false" [hideUserRadio]="true"
       (click)="clickedOnItem($event)"></app-contacts>
     <h2>Sent to me</h2>
-    <app-contacts [collectionUsers]="this.includedInAnother" [hideTrash]="false" [hideUserRadio]="true"
+    <app-contacts [collectionUsers]="this.includedInAnother" [hideAdd]="false" [hideTrash]="false" [hideUserRadio]="true"
       (click)="clickedOnItem($event)"></app-contacts>
 
   </ion-content>

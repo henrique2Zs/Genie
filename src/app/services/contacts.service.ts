@@ -39,9 +39,21 @@ export class ContactsService {
   /*
   Incluye contact in a map para mantener en el orden alfabético y replica el mapa en su array
   */ 
-  setContact(nickname: string): void {
+  putContactInthisOwnlist(nickname: string): void {
     this.includedByThis.set(nickname, new User (nickname, nickname));    
     this.includedByThisArray = this.buildArrayFromMap(this.includedByThis);
+  }
+
+  /*
+  * Include the contact that has asked to be in touch
+  */
+  putContactInBothList(): User[] {
+    let user = this.contactSelected
+    this.contactsMap.set(user.nickname, user);
+    this.includedInAnother.delete(user.nickname)    
+    this.contactsArray = this.buildArrayFromMap(this.contactsMap);    
+    this.includedInAnotherArray = this.buildArrayFromMap(this.includedInAnother)
+    return this.contactsArray
   }
 
   removeContact() {    

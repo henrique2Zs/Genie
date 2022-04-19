@@ -25,7 +25,7 @@ export class ContactsPage implements OnInit {
    }
 
   addContact() {
-    this.contactsServs.setContact(this.inputName)    
+    this.contactsServs.putContactInthisOwnlist(this.inputName)    
     this.inputName = ""    
   }
 
@@ -49,10 +49,16 @@ export class ContactsPage implements OnInit {
 
   clickedOnItem(event: Event) {   
     let eventTarget = <HTMLElement>event.target   
-    // Check if the click on the item was on the trash icon or on anywhere of the item 
-    if (eventTarget.tagName === 'ION-ICON' && eventTarget.attributes.getNamedItem('name').value.toString() === 'trash') {
+    // Check if the click was on trash or add icon and if not open the contact's page 
+    if (eventTarget.tagName === 'ION-ICON') {
+      if (eventTarget.attributes.getNamedItem('name').value.toString() === 'trash') {
       this.removeContact()
       this.buildList()
+      }
+      else if (eventTarget.attributes.getNamedItem('name').value.toString() === 'add-circle') {
+        this.contactsList = this.contactsServs.putContactInBothList()
+        this.includedInAnother = this.contactsServs.getIncludedInAnotherArray()
+      }
     }
     // Check if the user is a contact to don't open a blank profile's page
     else if (this.contactsServs.getContactsMap().has(this.contactsServs.getContactSelected().nickname)) {

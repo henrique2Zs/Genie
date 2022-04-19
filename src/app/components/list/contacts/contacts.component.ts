@@ -12,6 +12,7 @@ export class ContactsComponent implements OnInit {
   @Input() collectionUsers: User[];
   @Input() hideTrash = true
   @Input() hideUserRadio = false
+  @Input() hideAdd = true
   
   contactSelected = (user: User) => this.contactsService.contactSelected=user
   
@@ -19,7 +20,4 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit() {}
 
-  showSelection() {
-    this.contactsService.contactsMap.values
-  }
 }
