@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
 import { CardsService } from 'src/app/services/cards.service';
 
+
 @Component({
   selector: 'app-selection',
   templateUrl: './selection.page.html',

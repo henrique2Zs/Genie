@@ -8,13 +8,15 @@ import { SelectionPageRoutingModule } from './selection-routing.module';
 
 import { SelectionPage } from './selection.page';
 import { CardComponent } from 'src/app/components/card/card.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SelectionPageRoutingModule
+    SelectionPageRoutingModule,
+    SwiperModule
   ],
   declarations: [
     SelectionPage,
