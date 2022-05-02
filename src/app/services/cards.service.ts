@@ -38,7 +38,7 @@ export class CardsService {
       new Card(
         1,
         "www.boom.com",
-        "/app/components/card/Captura.png",
+        "assets/patinete1.jpg",
         "Built",
         "test 1",
         1,
@@ -48,7 +48,7 @@ export class CardsService {
       new Card(
         2,
         "www.bing2",
-        "./app/card/Captura.png",
+        "assets/patinete1.jpg",
         "Liked",
         "test 2",
         2,
@@ -58,7 +58,7 @@ export class CardsService {
       new Card(
         3,
         "www.bing2",
-        "./app/card/Captura.png",
+        "assets/patinete1.jpg",
         "Sent",
         "test 3",
         3,
@@ -68,7 +68,7 @@ export class CardsService {
       new Card(
         4,
         "www.bing2",
-        "./app/card/Captura.png",
+        "assets/patinete1.jpg",
         "Wished",
         "test 4",
         4,
@@ -78,7 +78,7 @@ export class CardsService {
       new Card(
         5,
         "www.bing2",
-        "./app/card/Captura.png",
+        "assets/patinete1.jpg",
         "In Selection only",
         "test 5",
         5,
@@ -88,7 +88,7 @@ export class CardsService {
       new Card(
         6,
         "www.bing2",
-        "./app/card/Captura.png",
+        "assets/patinete1.jpg",
         "In Selection only",
         "test 6",
         6,
@@ -97,7 +97,7 @@ export class CardsService {
 
     this.numsBuilt.push(1)
     this.numsLiked.push(2)
-    this.numsSent.push(3)
+    //this.numsSent.push(3) The service cardXContacts must to do this operation
     this.numsWished.push(4)
     this.numsReceived.push(6)
     // Fin datos de prueba
@@ -174,11 +174,8 @@ export class CardsService {
           }
         }
       }
-    }
-    console.log(this.numsSelectedToshow)
+    }    
     this.numsSelectedToshow.sort()
-    console.log(this.numsSelectedToshow)
-    console.log(this.pointerReceived)
   }
 
   /*
@@ -188,13 +185,9 @@ export class CardsService {
     let length = this.numsReceived.length //12
     let startIndex = this.pointerReceived //7
     let diffLengthPointer = length - startIndex //5
-    let endIndex = diffLengthPointer < 5 ? startIndex + diffLengthPointer : startIndex + 4
-    console.log(length)
-    console.log(startIndex)
-    console.log(endIndex)
+    let endIndex = diffLengthPointer < 5 ? startIndex + diffLengthPointer : startIndex + 4    
     this.numsSelectedToshow = this.numsReceived.slice(startIndex, endIndex)
-    this.pointerReceived = endIndex
-    console.log(this.numsSelectedToshow)
+    this.pointerReceived = endIndex    
   }
 
   public getCards(): Map<number, Card> {

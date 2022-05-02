@@ -8,19 +8,22 @@ import { BuildPageRoutingModule } from './build-routing.module';
 
 import { BuildPage } from './build.page';
 
-import { CardComponent } from 'src/app/components/card/card.component';
+import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
+import { CardComponentModule } from 'src/app/components/card/card.component.module';
+import { ViewCardPageModule } from '../../view-card/view-card.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BuildPageRoutingModule
+    BuildPageRoutingModule,
+    GridCardsComponentModule,
+    CardComponentModule,
+    ViewCardPageModule
   ],
   declarations: [
-    BuildPage,
-    //GridCardsComponent,
-    CardComponent
+    BuildPage
   ]
 })
 export class BuildPageModule {}

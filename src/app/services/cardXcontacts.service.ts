@@ -23,7 +23,7 @@ export class CardXcontactsService {
       let users: User[] = new Array
       let user = this.contactsService.contactsMap.get("aa")
       users.push(user)
-      //this.sendAcard(1, users)
+      this.sendAcard(3, users)
   }
 
   private builNumbersCardMap() {

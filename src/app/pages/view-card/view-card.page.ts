@@ -6,6 +6,7 @@ import { ContactsComponent } from 'src/app/components/list/contacts/contacts.com
 import { CardsService } from 'src/app/services/cards.service';
 import { CardXcontactsService } from 'src/app/services/cardXcontacts.service';
 import { ContactsService } from 'src/app/services/contacts.service';
+import { BuildPage } from '../tab-cards/build/build.page';
 
 @Component({
   selector: 'view-card',
@@ -20,7 +21,7 @@ export class ViewCardPage implements OnInit {
   openContactList = false
   contactsMap = new Map<string, User>();
   contactsList: User[] = new Array
-  listAppComponent: ContactsComponent[] = new Array
+  //listAppComponent: ContactsComponent[] = new Array
 
   constructor(
     private cardsService: CardsService,
@@ -31,11 +32,12 @@ export class ViewCardPage implements OnInit {
    
   ) {
     this.contactsMap = this.contactService.getContactsMap()
+    console.log(this.router)
     }
 
   ngOnInit() { 
     this.card = this.cardsService.selectedCard;
-    // An array from a ordered map
+    // User's list to select to send this card 
     for (let user of this.contactsMap) {
       this.contactsList.push(user[1])
     }    
@@ -61,7 +63,12 @@ export class ViewCardPage implements OnInit {
   createCard() {
     this.creating = false
     this.cardsService.put(this.card)
-    this.router.navigateByUrl('tabs/subtab-cards/build')
+    
+    //let routeParent = this.activatedRoute.parent.toString()    
+    //this.router.navigateByUrl(routeParent)
+    //console.log(routeParent)
+
+    this.router.navigateByUrl('tabs/subtab-cards/build')    
   }
 
 }

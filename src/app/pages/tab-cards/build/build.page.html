@@ -1,12 +1,3 @@
 <ion-content>
-
-  <ion-grid>
-    <ion-row>
-      <card-component (click)="openNewViewcard($event)" [card]="cardNew"></card-component>     
-
-      <card-component *ngFor="let card of collectionBuilt" [card]=card (click)="openViewcard(card, $event)"
-        [contentEditable]="false"></card-component>
-
-    </ion-row>
-  </ion-grid>
+      <grid-cards (click)="openViewcard($event)" [collectionCards]="collectionBuilt"></grid-cards>
 </ion-content>

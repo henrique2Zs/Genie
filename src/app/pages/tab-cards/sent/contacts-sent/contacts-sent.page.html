@@ -1,11 +1,9 @@
-<ion-header>
-  <card-component [card]="card" contenteditable="false"></card-component>
-</ion-header>
-
 <ion-content>
+  <card-component [card]="card" contenteditable="false"></card-component>
+
   <h1>Liked</h1>
-  <app-contacts [collectionUsers]="this.usersLiked()"></app-contacts>
+  <app-contacts [collectionUsers]="usersLiked"></app-contacts>
 
   <h1>Not answered</h1>
-  <app-contacts [collectionUsers]="this.usersNoAnswer()"></app-contacts>
+  <app-contacts [collectionUsers]="usersNoAnswer"></app-contacts>
 </ion-content>

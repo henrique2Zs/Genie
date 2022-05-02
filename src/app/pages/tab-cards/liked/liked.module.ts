@@ -8,16 +8,19 @@ import { LikedPageRoutingModule } from './liked-routing.module';
 
 import { LikedPage } from './liked.page';
 import { CardComponent } from 'src/app/components/card/card.component';
+import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
+import { CardComponentModule } from 'src/app/components/card/card.component.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LikedPageRoutingModule
+    LikedPageRoutingModule,
+    GridCardsComponentModule,
+    CardComponentModule
   ],
   declarations: [
-    LikedPage,
-    CardComponent]
+    LikedPage]
 })
 export class LikedPageModule {}

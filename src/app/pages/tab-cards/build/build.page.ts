@@ -11,31 +11,25 @@ import { CardsService } from 'src/app/services/cards.service';
 export class BuildPage implements OnInit {
 
   cardNew: Card = new Card(0, 'www. .com', './add-circle.svg', 'NEW CARD', '', 0, '');
-  cardNeweditable: Card = new Card();
   collectionBuilt: Card[] = new Array
 
   constructor(
     private router: Router,
     private cardsService: CardsService
   ) {    
-    this.collectionBuilt = this.cardsService.getCardsBuilt();    
+    this.collectionBuilt.push(this.cardNew)
+    this.collectionBuilt = this.collectionBuilt.concat(this.cardsService.getCardsBuilt())   
+    //console.log(this.router) 
+    //this.router.onSameUrlNavigation = "reload"
+    //this.router.routeReuseStrategy.shouldReuseRoute(this.router.routerState.snapshot.root.firstChild, this.router.routerState.snapshot.root)
   }
 
   ngOnInit() { }
 
-  openViewcard(cardClicked: Card, event: Event) {
+  openViewcard(event: Event) {
     let eventTarget = <HTMLElement>event.target   
     if (eventTarget.tagName !== 'ION-ICON') {
-      this.cardsService.selectedCard = cardClicked;
-      this.router.navigateByUrl('view-card');
-    }
-  }
-
-  openNewViewcard(event: Event) {
-    let eventTarget = <HTMLElement>event.target   
-    if (eventTarget.tagName !== 'ION-ICON') {
-      this.cardsService.selectedCard = this.cardNeweditable;
-      this.router.navigateByUrl('view-card');
+      this.router.navigate(["view-card"])        
     }
   }
 }

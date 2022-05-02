@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/class/user';
 import { CardsService } from 'src/app/services/cards.service';
 import { CardXcontactsService} from 'src/app/services/cardXcontacts.service';
-import { ContactsService } from 'src/app/services/contacts.service';
 
 @Component({
   selector: 'app-contacts-sent',
@@ -13,8 +12,8 @@ import { ContactsService } from 'src/app/services/contacts.service';
 export class ContactsSentPage implements OnInit {
 
   collectionAnswersUsers: Map<string, User[]> = new Map<string, User[]>()
-  usersLiked = () => this.collectionAnswersUsers.get("liked")
-  usersNoAnswer = () => this.collectionAnswersUsers.get("")
+  usersLiked: User[]
+  usersNoAnswer: User[]
   card= this.cardsService.selectedCard
 
   constructor(
@@ -22,7 +21,9 @@ export class ContactsSentPage implements OnInit {
     private cardsService: CardsService,
     private serviceSents: CardXcontactsService
     ) {
-      this.collectionAnswersUsers = this.serviceSents.getUsersOfSelectedCard()
+      this.collectionAnswersUsers = this.serviceSents.getUsersOfSelectedCard()      
+      this.usersLiked = this.collectionAnswersUsers.has("liked") ? new Array<User>() : this.collectionAnswersUsers.get("liked")
+      this.usersNoAnswer = this.collectionAnswersUsers.has("")  ? new Array<User>() : this.collectionAnswersUsers.get("")
       }
 
   ngOnInit() {
