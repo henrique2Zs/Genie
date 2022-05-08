@@ -94,9 +94,20 @@ export class CardsService {
         6,
         "es"
       ));
+      this.emuletedDBprovidecards.set(7,
+        new Card( 7, "www.bing2", "assets/celta.jpg",  "build", "test 7", 7, "es"));
+      this.emuletedDBprovidecards.set(8,
+      new Card( 8, "www.bing2", "assets/courier.jpg",  "build", "test 8", 8, "es"));
+      this.emuletedDBprovidecards.set(9,
+      new Card( 9, "www.bing2", "assets/patinete1.jpg",  "build", "test 9", 9, "es"));
+      this.emuletedDBprovidecards.set(10,
+        new Card( 10, "www.bing2", "assets/xlx.jpg",  "build", "test 10", 10, "es"));          
 
     this.numsBuilt.push(1)
-    this.numsLiked.push(2)
+    this.numsBuilt.push(7)
+    this.numsBuilt.push(8)
+    this.numsBuilt.push(9)
+    this.numsLiked.push(10)
     //this.numsSent.push(3) The service cardXContacts must to do this operation
     this.numsWished.push(4)
     this.numsReceived.push(6)

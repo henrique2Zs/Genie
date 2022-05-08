@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { SafeResourceUrl} from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class Card {
     id: number = 0;
     link?: string = ""; 
-    src?: string = "";
+    src?: string | SafeResourceUrl = "";
     title: string = "";
     description?: string = "";
     authorId: number = 0;

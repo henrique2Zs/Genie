@@ -10,7 +10,7 @@ import { CardsService } from 'src/app/services/cards.service';
 })
 export class BuildPage implements OnInit {
 
-  cardNew: Card = new Card(0, 'www. .com', './add-circle.svg', 'NEW CARD', '', 0, '');
+  cardNew: Card = new Card(0, 'www. .com', 'assets/add-circle-outline.svg', 'NEW CARD', '', 0, '');
   collectionBuilt: Card[] = new Array
 
   constructor(
