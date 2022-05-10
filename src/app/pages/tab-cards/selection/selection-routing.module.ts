@@ -7,8 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: SelectionPage
-  }
-];
+  },
+  {
+    path: 'viewCardPage',
+    loadChildren: () => import('../../../pages/view-card/view-card.module').then(m => m.ViewCardPageModule)
+  }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

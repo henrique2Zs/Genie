@@ -65,14 +65,3 @@ export class ContactsPage implements OnInit {
     this.router.navigateByUrl('view-contacts')}
   }
 }
-
-    /*
-    console.log(eventTarget.toString())
-    console.log(eventTarget.TEXT_NODE)
-    console.log(eventTarget.ATTRIBUTE_NODE)
-    
-    let nameEvent = event.composedPath();
-      if (nameEvent[4] !== undefined) {
-        console.log(nameEvent)
-        console.log(nameEvent[4].toString());}
-    */        

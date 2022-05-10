@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
 import { CardsService } from 'src/app/services/cards.service';
 
@@ -15,21 +15,18 @@ export class BuildPage implements OnInit {
 
   constructor(
     private router: Router,
-    private cardsService: CardsService
+    private cardsService: CardsService,
+    private route: ActivatedRoute
   ) {    
     this.collectionBuilt.push(this.cardNew)
-    this.collectionBuilt = this.collectionBuilt.concat(this.cardsService.getCardsBuilt())   
-    //console.log(this.router) 
-    //this.router.onSameUrlNavigation = "reload"
-    //this.router.routeReuseStrategy.shouldReuseRoute(this.router.routerState.snapshot.root.firstChild, this.router.routerState.snapshot.root)
-  }
+    this.collectionBuilt = this.collectionBuilt.concat(this.cardsService.getCardsBuilt())}
 
   ngOnInit() { }
 
   openViewcard(event: Event) {
     let eventTarget = <HTMLElement>event.target   
     if (eventTarget.tagName !== 'ION-ICON') {
-      this.router.navigate(["view-card"])        
+      this.router.navigate(["tabs/subtab-cards/build/viewCardPage"])
     }
   }
 }

@@ -2,7 +2,6 @@ import { Component, Input, OnInit, Type } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
 import { User } from 'src/app/class/user';
-import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
 import { CardsService } from 'src/app/services/cards.service';
 import { CardXcontactsService } from 'src/app/services/cardXcontacts.service';
 import { ContactsService } from 'src/app/services/contacts.service';
@@ -20,19 +19,19 @@ export class ViewCardPage implements OnInit {
   card: Card;
   openContactList = false
   contactsMap = new Map<string, User>();
-  contactsList: User[] = new Array
-  //listAppComponent: ContactsComponent[] = new Array
+  contactsList: User[] = new Array  
 
   constructor(
     private cardsService: CardsService,
     private contactService: ContactsService,
     private cardXcontactService: CardXcontactsService,
     private router?: Router,
-    private activatedRoute?: ActivatedRoute,
+    private route?: ActivatedRoute,
    
   ) {
     this.contactsMap = this.contactService.getContactsMap()
     console.log(this.router)
+    console.log(this.route)
     }
 
   ngOnInit() { 
@@ -63,12 +62,9 @@ export class ViewCardPage implements OnInit {
   createCard() {
     this.creating = false
     this.cardsService.put(this.card)
+    new BuildPage(this.router, this.cardsService, this.route)
+    this.router.navigate(['..'], {relativeTo: this.route})
     
-    //let routeParent = this.activatedRoute.parent.toString()    
-    //this.router.navigateByUrl(routeParent)
-    //console.log(routeParent)
-
-    this.router.navigateByUrl('tabs/subtab-cards/build')    
   }
 
 }

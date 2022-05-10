@@ -9,15 +9,10 @@ const routes: Routes = [
   {
     path: '',
     component: SentPage,
-    children: [
-      {
-        path: 'CardComponent',
-        component: CardComponent,
-      },
-      {
-        path: 'contacts-sent',
-        loadChildren: () => import('./contacts-sent/contacts-sent.module').then( m => m.ContactsSentPageModule)
-      }]
+  },
+  {
+    path: 'cardXcontacts',
+    loadChildren: () => import('./contacts-sent/contacts-sent.module').then( m => m.ContactsSentPageModule)
   }];
 
 @NgModule({

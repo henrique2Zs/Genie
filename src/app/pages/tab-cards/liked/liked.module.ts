@@ -7,9 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { LikedPageRoutingModule } from './liked-routing.module';
 
 import { LikedPage } from './liked.page';
-import { CardComponent } from 'src/app/components/card/card.component';
 import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
 import { CardComponentModule } from 'src/app/components/card/card.component.module';
+import { ViewCardPageModule } from '../../view-card/view-card.module';
 
 @NgModule({
   imports: [
@@ -18,7 +18,8 @@ import { CardComponentModule } from 'src/app/components/card/card.component.modu
     IonicModule,
     LikedPageRoutingModule,
     GridCardsComponentModule,
-    CardComponentModule
+    CardComponentModule,
+    ViewCardPageModule
   ],
   declarations: [
     LikedPage]

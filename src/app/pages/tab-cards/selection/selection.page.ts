@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
 import { CardsService } from 'src/app/services/cards.service';
 
@@ -15,12 +15,14 @@ export class SelectionPage implements OnInit {
   reachEnd = false
   emptySelection = true
 
-  constructor(private router: Router,
-    private cardsService: CardsService
-  ) {
+  constructor(
+    private router: Router,
+    private cardsService: CardsService,
+    private route: ActivatedRoute) 
+    {
     this.cardsSellection = this.cardsService.getCardsSellection();
     this.emptySelection = this.cardsSellection.length==0 ? true : false
-  }
+    }
 
   ngOnInit() {}
 
@@ -36,7 +38,7 @@ export class SelectionPage implements OnInit {
     let eventTarget = <HTMLElement>event.target   
     if (eventTarget.tagName !== 'ION-ICON') {
       this.cardsService.selectedCard = cardClicked;
-      this.router.navigateByUrl('view-card');
+      this.router.navigate(['tabs/subtab-cards/selection/viewCardPage']);
     }
   }
 }

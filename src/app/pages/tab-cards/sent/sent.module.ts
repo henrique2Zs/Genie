@@ -10,6 +10,7 @@ import { SentPage } from './sent.page';
 
 import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
 import { CardComponentModule } from 'src/app/components/card/card.component.module';
+import { ContactsSentPageModule } from './contacts-sent/contacts-sent.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { CardComponentModule } from 'src/app/components/card/card.component.modu
     IonicModule,
     SentPageRoutingModule,
     GridCardsComponentModule,
-    CardComponentModule
+    CardComponentModule,
+    ContactsSentPageModule
   ],
   declarations: [
     SentPage,

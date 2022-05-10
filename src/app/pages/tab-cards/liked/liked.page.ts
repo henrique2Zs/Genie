@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/app/class/card';
 import { CardsService } from 'src/app/services/cards.service';
 
@@ -14,17 +14,18 @@ export class LikedPage implements OnInit {
 
   constructor(
     private router: Router,
-    private cardsService: CardsService
-  ) {
+    private cardsService: CardsService,
+    private route: ActivatedRoute) 
+    {
     this.collectionLiked = this.cardsService.getCardsLiked();
-  }
+    }
 
   ngOnInit() { }
 
   openViewcard(event: Event) {
     let eventTarget = <HTMLElement>event.target
-    if (eventTarget.tagName !== 'ION-ICON') {     
-      this.router.navigateByUrl('view-card');
+    if (eventTarget.tagName !== 'ION-ICON') {
+      this.router.navigate(['tabs/subtab-cards/liked/viewCardPage']);
     }
   }
 }

@@ -9,6 +9,7 @@ import { SelectionPageRoutingModule } from './selection-routing.module';
 import { SelectionPage } from './selection.page';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { SwiperModule } from 'swiper/angular';
+import { ViewCardPageModule } from '../../view-card/view-card.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { SwiperModule } from 'swiper/angular';
     FormsModule,
     IonicModule,
     SelectionPageRoutingModule,
-    SwiperModule
+    SwiperModule,
+    ViewCardPageModule
   ],
   declarations: [
     SelectionPage,
