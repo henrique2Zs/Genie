@@ -6,7 +6,7 @@ Una plantilla con cronograma de las últimas fases se encuentra en el siguiente 
 
 ## Checkpoint 13/5:
   Los siguientes ficheros están disponibles para descarga en carpeta raíz:
-  - Video explicativo: simplescreenrecorder-(4).mp4
+  - **Video explicativo**: [simplescreenrecorder-(4).mp4](https://github.com/henrique2Zs/Genie/blob/main/simplescreenrecorder-(4).mp4)
   - APK (debug): app-debug.apk
 
 ## Semana 1
