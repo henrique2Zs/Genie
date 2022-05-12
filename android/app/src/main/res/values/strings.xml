@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Genie</string>
+    <string name="title_activity_main">Genie</string>
+    <string name="package_name">com.genie</string>
+    <string name="custom_url_scheme">com.genie</string>
+</resources>

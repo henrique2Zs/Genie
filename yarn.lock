@@ -1426,6 +1426,11 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     "to-fast-properties" "^2.0.0"
 
+"@capacitor/android@^3.5.1":
+  "integrity" "sha512-rjehS0+BQBlwoN8hUyrMuzexn/9QJsONb1kmN5uXcL8JuTEbv35fa7z0tSD4x1LKwUFd+3Zeuwt60QRuwijlmw=="
+  "resolved" "https://registry.npmjs.org/@capacitor/android/-/android-3.5.1.tgz"
+  "version" "3.5.1"
+
 "@capacitor/app@1.0.7":
   "integrity" "sha512-7CcMGp9yshBR0fkmNPVsYmUUhlAQnJFCeJGJIF3862D5l+drBjEOE+QoGjiKtaqPriadkGCsoYVrX10yGULDpA=="
   "resolved" "https://registry.npmjs.org/@capacitor/app/-/app-1.0.7.tgz"
@@ -1458,7 +1463,7 @@
     "tslib" "^2.1.0"
     "xml2js" "^0.4.23"
 
-"@capacitor/core@^3.0.0", "@capacitor/core@^3.5.1":
+"@capacitor/core@^3.0.0", "@capacitor/core@^3.5.0", "@capacitor/core@^3.5.1":
   "integrity" "sha512-UTROxB7q/hZBnhDLcCN7mVsAX3SxXNMhVuPbtddsDOUCm4hExLXN62gPD7rjgmumhfHMjeXmkw/EfRzSjttL1g=="
   "resolved" "https://registry.npmjs.org/@capacitor/core/-/core-3.5.1.tgz"
   "version" "3.5.1"

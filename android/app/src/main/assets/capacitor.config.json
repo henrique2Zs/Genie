@@ -1,0 +1,7 @@
+{
+	"appId": "com.genie",
+	"appName": "Genie",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"linuxAndroidStudioPath": "/home/henrique/android-studio/bin/studio.sh"
+}
