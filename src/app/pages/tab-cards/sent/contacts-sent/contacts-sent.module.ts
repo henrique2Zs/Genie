@@ -10,7 +10,7 @@ import { ContactsSentPage } from './contacts-sent.page';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
 import { CardComponentModule } from 'src/app/components/card/card.component.module';
-import { ContactsComponentModule } from 'src/app/components/list/contacts/card.component.module';
+import { ContactsComponentModule } from 'src/app/components/list/contacts/contacts.component.module';
 
 @NgModule({
   imports: [

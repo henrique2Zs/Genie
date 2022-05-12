@@ -41,4 +41,8 @@ export class SelectionPage implements OnInit {
       this.router.navigate(['tabs/subtab-cards/selection/viewCardPage']);
     }
   }
+
+  reachedEnd(bool: boolean) {
+    this.reachEnd = true
+  }
 }

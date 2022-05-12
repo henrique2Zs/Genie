@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "Genie",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.genie",
+  "appName": "Genie",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }

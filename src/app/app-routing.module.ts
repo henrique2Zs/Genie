@@ -35,10 +35,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/view-card/view-card.module').then( m => m.ViewCardPageModule)
   },
   {
-    path: 'activities-page',
-    loadChildren: () => import('./pages/tab-contacts/activities-page/activities-page.module').then( m => m.ActivitiesPagePageModule)
-  },
-  {
     path: 'selection',
     loadChildren: () => import('./pages/tab-cards/selection/selection.module').then( m => m.SelectionPageModule)
   },

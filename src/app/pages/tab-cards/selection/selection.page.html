@@ -1,10 +1,10 @@
 <ion-content>
-  <ion-button *ngIf="reachEnd" (click)="pullAnothersCards()" color="secondary" strong="true" expand="block">Refresh
+  <ion-button *ngIf="this.reachEnd" (click)="pullAnothersCards()" color="secondary" strong="true" expand="block">Refresh
   </ion-button>
   <h1 *ngIf="emptySelection">At this moment there isn't anothers cards to show</h1>
   <ion-button *ngIf="emptySelection" (click)="pullAnothersCards()" color="secondary" strong="true" expand="block">
     Refresh</ion-button>
-  <swiper *ngIf="!emptySelection" (reachEnd)="reachEnd='true'">
+  <swiper *ngIf="!emptySelection" (reachEnd)="this.reachedEnd(true)">
     <ng-template swiperSlide *ngFor="let card of this.cardsSellection">
       <card-component (click)="openViewcard(card, $event)" [card]=card contenteditable="false"></card-component>
     </ng-template>

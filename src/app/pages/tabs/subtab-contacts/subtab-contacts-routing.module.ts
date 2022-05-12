@@ -9,11 +9,6 @@ const routes: Routes = [
     component: SubtabContactsPage,
       children: [
         {
-          path: 'activities',
-          loadChildren: () => import('../../tab-contacts/activities-page/activities-page.module')
-          .then(m => m.ActivitiesPagePageModule)
-        },
-        {
           path: 'list',
           loadChildren: () => import('../../tab-contacts/contacts-page/contacts-page.module')
           .then(m => m.ContactsPageModule)

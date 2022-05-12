@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { ContactsService } from 'src/app/services/contacts.service';
 import { User } from 'src/app/class/user';
 import { Router } from '@angular/router';
+import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
 
 @Component({
   selector: 'contacts-page',
@@ -15,10 +16,12 @@ export class ContactsPage implements OnInit {
   includedByThis: User[] = new Array
   includedInAnother: User[] = new Array
   inputName = ""
+  addClicked = false
 
   constructor(
     private router: Router,
-    private contactsServs: ContactsService) { }
+    private contactsServs: ContactsService,
+    private infouser: InfoPerfilComponent) { }
 
   ngOnInit() {
     this.buildList()

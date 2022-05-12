@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SafeResourceUrl} from '@angular/platform-browser';
 
-@Injectable({
-  providedIn: 'root'
-})
+
 export class Card {
     id: number = 0;
     link?: string = ""; 
@@ -16,7 +14,7 @@ export class Card {
     inWishList = false
     static totalCards = 0
    
-    constructor(id?, link?,src?, title?,description?,authorId?,lang?) {
+    constructor(id?: number, link?,src?, title?,description?,authorId?,lang?) {
         this.id = Card.totalCards + 1;
         this.link = link;
         this.src = src;

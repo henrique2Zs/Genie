@@ -44,8 +44,12 @@ Una plantilla con cronograma de las últimas fases se encuentra en el siguiente 
 - Implementación de la lógica de los cards que son mostrado al usuario en la página Selection en acuerdo con el requisito del proyecto en que parte de dicha selección están los envíos de cards por sus contactos siempre anonimamente y otra parte cards aleatorios.
     - La misma selección no es mostrada otra vez al usuario y por lo tanto si el usuario haz click en actualizar una nueva lista será creada
 
+## Semana 5
+ - Funcionalidad de modificar la imagen de un card que está siendo editado así como de incluir una imagen en un nuevo card
+ - Ajustes de los "grids" de las páginas que mostran los cards para que sean resposivos a 3 tamaños de pantalla distintos así como que tengan los cards casi el mismo tamaño. Todavía el tamaño de las imagénes de los cards modifican el tamaño de ellos.
 
 ## referencias
+ - https://leanpub.com/aprendeionic/ 
  - https://developer.mozilla.org/es/docs/Web/HTML/Element
  - https://developer.mozilla.org/es/docs/Web/HTML
  - https://developer.mozilla.org/es/docs/Web/HTML/Global_attributes
@@ -58,3 +62,4 @@ Una plantilla con cronograma de las últimas fases se encuentra en el siguiente 
  - https://github.com/angular/angularfire
  - https://www.typescriptlang.org/pt/docs/handbook/
  - https://firebase.google.com/docs/auth/web/password-auth#web-version-9
+

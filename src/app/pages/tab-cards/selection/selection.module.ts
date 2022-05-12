@@ -10,6 +10,7 @@ import { SelectionPage } from './selection.page';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { SwiperModule } from 'swiper/angular';
 import { ViewCardPageModule } from '../../view-card/view-card.module';
+import { CardComponentModule } from 'src/app/components/card/card.component.module';
 
 @NgModule({
   imports: [
@@ -18,10 +19,10 @@ import { ViewCardPageModule } from '../../view-card/view-card.module';
     IonicModule,
     SelectionPageRoutingModule,
     SwiperModule,
+    CardComponentModule,
     ViewCardPageModule
   ],
   declarations: [
-    SelectionPage,
-    CardComponent]
+    SelectionPage]
 })
 export class SelectionPageModule {}

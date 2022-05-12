@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AnswersPagePageRoutingModule } from './answers-page-routing.module';
 
 import { AnswersPage } from './answers-page.page';
-import { ContactsComponentModule } from 'src/app/components/list/contacts/card.component.module';
+import { ContactsComponentModule } from 'src/app/components/list/contacts/contacts.component.module';
 
 @NgModule({
   imports: [

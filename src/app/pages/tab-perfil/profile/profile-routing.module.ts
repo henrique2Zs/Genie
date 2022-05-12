@@ -8,11 +8,6 @@ const routes: Routes = [
   {
     path: '',
     component: ProfilePage,
-    children: [
-      {
-      path: 'InfoPerfilComponent',
-      component: InfoPerfilComponent,
-      }]
   }
 ];
 

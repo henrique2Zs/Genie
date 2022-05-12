@@ -7,18 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
-import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
+import { ViewCardPageModule } from '../../view-card/view-card.module';
+import { InfoPerfilComponentModule } from 'src/app/components/form/info-perfil/info-perfil.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule
+    ProfilePageRoutingModule,
+    InfoPerfilComponentModule
   ],
   declarations: [
-    ProfilePage,
-    InfoPerfilComponent
-  ]
+    ProfilePage ]
 })
 export class ProfilePageModule {}

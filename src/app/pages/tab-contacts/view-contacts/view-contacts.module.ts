@@ -9,6 +9,7 @@ import { ViewContactsPageRoutingModule } from './view-contacts-routing.module';
 import { ViewContactsPage } from './view-contacts.page';
 import { InfoPerfilComponent } from 'src/app/components/form/info-perfil/info-perfil.component';
 import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
+import { InfoPerfilComponentModule } from 'src/app/components/form/info-perfil/info-perfil.module';
 
 
 @NgModule({
@@ -17,11 +18,10 @@ import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-car
     FormsModule,
     IonicModule,
     ViewContactsPageRoutingModule,
-    GridCardsComponentModule
+    GridCardsComponentModule,
+    InfoPerfilComponentModule
   ],
   declarations: [
-    ViewContactsPage,
-    InfoPerfilComponent,    
-  ]
+    ViewContactsPage ]
 })
 export class ViewContactsPageModule {}

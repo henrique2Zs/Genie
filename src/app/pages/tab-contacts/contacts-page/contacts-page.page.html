@@ -5,13 +5,13 @@
   <ion-header>
     <div>
       <ion-item>
-        <ion-icon *ngIf=!addClicked id="icon-addContact" slot=start name="add-circle" color="gray" size="large"
-          (click)="addContact('testContactPage')"></ion-icon>
+        <ion-icon *ngIf="!addClicked" id="icon-addContact" slot=start name="add-circle" color="gray" size="large"
+          (click)="addContact()"></ion-icon>
         <span (click)="rebuildList()">
-          <ion-icon *ngIf=addClicked id="icon-addContact" (click)="addContact()" slot=start name="add-circle"
+          <ion-icon *ngIf="addClicked" id="icon-addContact" (click)="addContact()" slot=start name="add-circle"
             color="primary" size="large"></ion-icon>
         </span>
-        <ion-input [(ngModel)]="inputName" (ionInput)="addClicked='true'" placeholder="Add a contact"></ion-input>
+        <ion-input [(ngModel)]="inputName" (ionInput)="addClicked=true" placeholder="Add a contact"></ion-input>
       </ion-item>
     </div>
     <div></div>

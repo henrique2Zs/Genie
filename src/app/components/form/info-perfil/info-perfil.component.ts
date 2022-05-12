@@ -1,5 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/class/user';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'info-perfil',

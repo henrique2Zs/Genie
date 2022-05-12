@@ -8,6 +8,7 @@ import { ContactsPageRoutingModule } from './contacts-page-routing.module';
 
 import { ContactsPage } from './contacts-page.page';
 import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
+import { ContactsComponentModule } from 'src/app/components/list/contacts/contacts.component.module';
 
 @NgModule({
   imports: [
@@ -15,13 +16,10 @@ import { ContactsComponent } from 'src/app/components/list/contacts/contacts.com
     FormsModule,
     IonicModule,
     ContactsPageRoutingModule,   
+    ContactsComponentModule
   ],
-  declarations: [
-    ContactsPage,
-    ContactsComponent
-  ],/*
-  entryComponents: [
-    ContactsComponent
-  ] */
+  declarations:  [
+    ContactsPage ]
 })
 export class ContactsPageModule {}
+

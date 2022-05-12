@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ViewCardPageRoutingModule } from './view-card-routing.module';
 import { ViewCardPage } from './view-card.page';
 
-import { ContactsComponentModule } from 'src/app/components/list/contacts/card.component.module';
+import { ContactsComponentModule } from 'src/app/components/list/contacts/contacts.component.module';
 import { CardComponentModule } from 'src/app/components/card/card.component.module';
 
 @NgModule({
