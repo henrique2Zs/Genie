@@ -1,3 +1,8 @@
 <ion-content>
-      <grid-cards (click)="openViewcard($event)" [collectionCards]="collectionBuilt"></grid-cards>
+      <ion-fab color="primary" size="large" vertical="top" horizontal="end" slot="fixed">
+            <ion-fab-button #fabAddTE (click)="buildCard()">
+                  <ion-icon name="add" size="large"></ion-icon>
+            </ion-fab-button>
+      </ion-fab>
+      <grid-cards (click)="openViewcard($event)" [collectionCards]="this.cardsService.getCardsBuilt()"></grid-cards>
 </ion-content>

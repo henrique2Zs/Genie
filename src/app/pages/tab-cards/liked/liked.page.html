@@ -1,4 +1,4 @@
 <ion-content>
 
-  <grid-cards (click)="openViewcard($event)" [collectionCards]="collectionLiked"></grid-cards>
+  <grid-cards (click)="openViewcard($event)" [collectionCards]="this.cardsService.getCardsLiked()"></grid-cards>
 </ion-content>

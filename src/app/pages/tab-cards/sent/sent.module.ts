@@ -10,7 +10,7 @@ import { SentPage } from './sent.page';
 
 import { GridCardsComponentModule } from 'src/app/components/grid/cards/grid-cards.module';
 import { CardComponentModule } from 'src/app/components/card/card.component.module';
-import { ContactsSentPageModule } from './contacts-sent/contacts-sent.module';
+import { CardXContactsSentPageModule } from './cardXcontacts/cardXcontacts.module';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import { ContactsSentPageModule } from './contacts-sent/contacts-sent.module';
     SentPageRoutingModule,
     GridCardsComponentModule,
     CardComponentModule,
-    ContactsSentPageModule
+    CardXContactsSentPageModule
   ],
   declarations: [
     SentPage,

@@ -10,9 +10,6 @@ import { ContactsService } from 'src/app/services/contacts.service';
 })
 export class AnswersPage implements OnInit {
 
-  contactSelected: User;
-  collectionUsers= this.contactsService.getContactsArray();
-
   constructor(
     private router: Router,
     private contactsService: ContactsService) { }

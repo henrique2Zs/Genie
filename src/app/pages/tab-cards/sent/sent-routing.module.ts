@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CardComponent } from 'src/app/components/card/card.component';
-
 
 import { SentPage } from './sent.page';
 
@@ -12,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'cardXcontacts',
-    loadChildren: () => import('./contacts-sent/contacts-sent.module').then( m => m.ContactsSentPageModule)
+    loadChildren: () => import('./cardXcontacts/cardXcontacts.module').then( m => m.CardXContactsSentPageModule)
   }];
 
 @NgModule({

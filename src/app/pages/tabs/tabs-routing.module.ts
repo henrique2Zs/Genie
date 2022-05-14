@@ -23,7 +23,7 @@ const routes: Routes = [
       }, 
       {
         path: '',
-        redirectTo: 'tabs',
+        redirectTo: 'subtab-cards',
         pathMatch: 'full'
       }
     ]

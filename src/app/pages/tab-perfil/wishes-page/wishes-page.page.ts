@@ -12,13 +12,9 @@ import { Card } from 'src/app/class/card';
 })
 export class WishesPagePage implements OnInit {
 
-  cardsWished: Card[] = new Array()
-  
   constructor(
     private router: Router,
-    private cardsService: CardsService) {
-      this.cardsWished = this.cardsService.getCardsWished();
-  }
+    private cardsService: CardsService) {}
 
   ngOnInit() {}
 

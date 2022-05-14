@@ -4,11 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ContactsSentPageRoutingModule } from './contacts-sent-routing.module';
+import { ContactsSentPageRoutingModule } from './cardXcontacts-routing.module';
 
-import { ContactsSentPage } from './contacts-sent.page';
-import { CardComponent } from 'src/app/components/card/card.component';
-import { ContactsComponent } from 'src/app/components/list/contacts/contacts.component';
+import { CardXContactsSentPage } from './cardXcontacts.page';
 import { CardComponentModule } from 'src/app/components/card/card.component.module';
 import { ContactsComponentModule } from 'src/app/components/list/contacts/contacts.component.module';
 
@@ -22,7 +20,7 @@ import { ContactsComponentModule } from 'src/app/components/list/contacts/contac
     ContactsComponentModule
   ],
   declarations: [
-    ContactsSentPage
+    CardXContactsSentPage
   ]
 })
-export class ContactsSentPageModule {}
+export class CardXContactsSentPageModule {}

@@ -5,6 +5,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-contacts [collectionUsers]="this.collectionUsers" hiddenRadio="false" enabled="false" (click)="viewAnswers()">
+  <app-contacts [collectionUsers]="this.contactsService.getContactsArray()" [hideUserRadio]="true" enabled="false" (click)="viewAnswers()">
   </app-contacts>
 </ion-content>

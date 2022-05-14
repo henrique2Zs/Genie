@@ -23,27 +23,11 @@ export class ContactsPage implements OnInit {
     private contactsServs: ContactsService,
     private infouser: InfoPerfilComponent) { }
 
-  ngOnInit() {
-    this.buildList()
-   }
+  ngOnInit() {}
 
   addContact() {
     this.contactsServs.putContactInthisOwnlist(this.inputName)    
     this.inputName = ""    
-  }
-
-  buildList() {
-    this.contactsList = new Array    
-    this.contactsList = this.contactsServs.getContactsArray()    
-    this.includedByThis = this.contactsServs.getIncludedByThisArray()
-    this.includedInAnother = this.contactsServs.getIncludedInAnotherArray()
-  }
-
-  rebuildList() {
-    this.contactsList = new Array
-    this.includedByThis = new Array
-    this.includedInAnother = new Array
-    this.buildList()
   }
 
   removeContact() { //TODO
@@ -56,7 +40,6 @@ export class ContactsPage implements OnInit {
     if (eventTarget.tagName === 'ION-ICON') {
       if (eventTarget.attributes.getNamedItem('name').value.toString() === 'trash') {
       this.removeContact()
-      this.buildList()
       }
       else if (eventTarget.attributes.getNamedItem('name').value.toString() === 'add-circle') {
         this.contactsList = this.contactsServs.putContactInBothList()

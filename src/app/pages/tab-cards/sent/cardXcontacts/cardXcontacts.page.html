@@ -1,0 +1,11 @@
+<ion-content>
+  <card-component [card]="card" contenteditable="false"></card-component>
+
+  <h1>Liked</h1>  
+    <app-contacts *ngIf="this.serviceSents.getUsersOfSelectedCard().has('liked')" 
+    [collectionUsers]="this.serviceSents.getUsersOfSelectedCard().get('liked')"></app-contacts>
+  
+    <h1>Not answered</h1>
+    <app-contacts *ngIf="this.serviceSents.getUsersOfSelectedCard().has('')" 
+    [collectionUsers]="this.serviceSents.getUsersOfSelectedCard().get('')"></app-contacts>
+</ion-content>

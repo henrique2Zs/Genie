@@ -10,15 +10,11 @@ import { CardsService } from 'src/app/services/cards.service';
 })
 export class LikedPage implements OnInit {
 
-  collectionLiked: Card[] = new Array();
-
   constructor(
     private router: Router,
     private cardsService: CardsService,
     private route: ActivatedRoute) 
-    {
-    this.collectionLiked = this.cardsService.getCardsLiked();
-    }
+    {}
 
   ngOnInit() { }
 

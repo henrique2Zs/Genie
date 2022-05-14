@@ -17,11 +17,14 @@ export class BuildPage implements OnInit {
     private router: Router,
     private cardsService: CardsService,
     private route: ActivatedRoute
-  ) {    
-    this.collectionBuilt.push(this.cardNew)
-    this.collectionBuilt = this.collectionBuilt.concat(this.cardsService.getCardsBuilt())}
+  ) {}
 
   ngOnInit() { }
+
+  buildCard() {
+    this.cardsService.selectedCard = new Card(0, 'www. .com', 'assets/add-circle-outline.svg', 'NEW CARD', '', 0, '');
+    this.router.navigate(["tabs/subtab-cards/build/viewCardPage"])
+  }
 
   openViewcard(event: Event) {
     let eventTarget = <HTMLElement>event.target   

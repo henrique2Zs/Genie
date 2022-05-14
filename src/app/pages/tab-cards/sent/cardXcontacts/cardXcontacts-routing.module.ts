@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ContactsSentPage } from './contacts-sent.page';
+import { CardXContactsSentPage } from './cardXcontacts.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ContactsSentPage
+    component: CardXContactsSentPage
   }
 ];
 
