@@ -18,7 +18,7 @@ export class AnswersPage implements OnInit {
   }
 
   viewAnswers() {
-    this.router.navigateByUrl('view-answers')
+    this.router.navigate(['tabs/subtab-contacts/answers/view-answers'])
   }
 
 }

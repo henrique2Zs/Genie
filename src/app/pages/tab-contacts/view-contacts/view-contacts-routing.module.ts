@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ViewContactsPage
+  },
+  {
+    path: 'viewCard',
+    loadChildren: () => import('../../../pages/view-card/view-card.module').then(m => m.ViewCardPageModule)
   }
 ];
 

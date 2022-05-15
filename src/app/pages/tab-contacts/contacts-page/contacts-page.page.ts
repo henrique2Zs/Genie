@@ -48,6 +48,6 @@ export class ContactsPage implements OnInit {
     }
     // Check if the user is a contact to don't open a blank profile's page
     else if (this.contactsServs.getContactsMap().has(this.contactsServs.getContactSelected().nickname)) {
-    this.router.navigateByUrl('view-contacts')}
+    this.router.navigate(["tabs/subtab-contacts/list/view-contact"])}
   }
 }

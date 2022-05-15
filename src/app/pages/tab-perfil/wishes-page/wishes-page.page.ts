@@ -18,8 +18,11 @@ export class WishesPagePage implements OnInit {
 
   ngOnInit() {}
 
-  openViewcard() {       
-    this.router.navigateByUrl('view-card');
+  openViewcard(event: Event) {
+    let eventTarget = <HTMLElement>event.target   
+      if (eventTarget.tagName !== 'ION-ICON') {    
+      this.router.navigate(['tabs/subtab-profile/wishespage/viewCard']);
+    }
   }
 
 

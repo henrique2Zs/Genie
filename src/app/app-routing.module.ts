@@ -59,20 +59,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
   },
   {
-    path: 'view-contacts',
-    loadChildren: () => import('./pages/tab-contacts/view-contacts/view-contacts.module').then( m => m.ViewContactsPageModule)
-  },
-  {
     path: 'contacts-sent',
     loadChildren: () => import('./pages/tab-cards/sent/cardXcontacts/cardXcontacts.module').then(m => m.CardXContactsSentPageModule)
   },
   {
     path: 'answers-page',
     loadChildren: () => import('./pages/tab-contacts/answers-page/answers-page.module').then( m => m.AnswersPagePageModule)
-  },
-  {
-    path: 'view-answers',
-    loadChildren: () => import('./pages/tab-contacts/view-answers/view-answers.module').then( m => m.ViewAnswersPageModule)
   }
 ];
 

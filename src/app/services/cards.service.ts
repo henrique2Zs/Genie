@@ -152,7 +152,7 @@ export class CardsService {
     }
   }
 
-  private getCardOnDB(num: number): Card {
+  public getCardOnDB(num: number): Card {
     let card = this.emuletedDBprovidecards.get(num)
     card.liked = this.numsLiked.includes(num)
     card.inWishList = this.numsWished.includes(num)
@@ -193,9 +193,9 @@ export class CardsService {
   * Put 5 numbers inside de collection that is showed in the Selection's page
   */
   private selectReceivedcards() {
-    let length = this.numsReceived.length //12
-    let startIndex = this.pointerReceived //7
-    let diffLengthPointer = length - startIndex //5
+    let length = this.numsReceived.length
+    let startIndex = this.pointerReceived
+    let diffLengthPointer = length - startIndex
     let endIndex = diffLengthPointer < 5 ? startIndex + diffLengthPointer : startIndex + 4    
     this.numsSelectedToshow = this.numsReceived.slice(startIndex, endIndex)
     this.pointerReceived = endIndex    

@@ -14,7 +14,11 @@ const routes: Routes = [
         path: 'contactsComponent',
         component: ContactsComponent,
         }]
-  }
+  },
+  {
+    path: 'view-contact',
+    loadChildren: () => import('../../../pages/tab-contacts/view-contacts/view-contacts.module').then( m => m.ViewContactsPageModule)
+  },
 ];
 
 @NgModule({

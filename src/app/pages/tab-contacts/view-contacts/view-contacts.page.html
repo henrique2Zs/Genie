@@ -8,5 +8,5 @@
     <h1 class="title-content-tab" aligment="center">Tallas</h1>     
     <info-perfil contenteditable="false" [user]="user"></info-perfil>
     <h1>Wished list</h1>
-    <grid-cards [collectionCards]="cards"></grid-cards>
+    <grid-cards (click)="openViewcard($event)" [collectionCards]="cards"></grid-cards>
 </ion-content>

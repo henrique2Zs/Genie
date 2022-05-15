@@ -7,13 +7,11 @@ import { AnswersPage } from './answers-page.page';
 const routes: Routes = [
   {
     path: '',
-    component: AnswersPage,
-    children: [
-      {
-        path: 'view-answers',
-        component: ViewAnswersPage
-      }
-    ]
+    component: AnswersPage,   
+  },
+  {
+    path: 'view-answers',
+    loadChildren: () => import('../../../pages/tab-contacts/view-answers/view-answers.module').then( m => m.ViewAnswersPageModule)
   }
 ];
 

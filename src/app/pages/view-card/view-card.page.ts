@@ -29,9 +29,7 @@ export class ViewCardPage implements OnInit {
     private route?: ActivatedRoute,
    
   ) {
-    this.contactsMap = this.contactService.getContactsMap()
-    console.log(this.router)
-    console.log(this.route)
+    this.contactsMap = this.contactService.getContactsMap() 
     }
 
   ngOnInit() { 
