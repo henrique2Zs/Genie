@@ -2,7 +2,12 @@
 
 El anteproyecto se encuentra en la rama anteproyecto.
 
-Una plantilla con cronograma de las últimas fases se encuentra en el siguiente enlace. Está hecha para uso proprio para la ordenación de tareas a cumplir: https://docs.google.com/spreadsheets/d/1_v-Ega-wbCNjAaQTUOTAYNmLVTN03UMWS3dC4MFup_g/edit?usp=sharing
+[Una plantilla con cronograma de las últimas fases se encuentra en el siguiente enlace. Está hecha para uso proprio para la ordenación de tareas a cumplir. ](https://docs.google.com/spreadsheets/d/1_v-Ega-wbCNjAaQTUOTAYNmLVTN03UMWS3dC4MFup_g/edit?usp=sharing)
+
+## Checkpoint 13/5:
+  Los siguientes ficheros están disponibles para descarga en carpeta raíz:
+  - **Video explicativo**: [simplescreenrecorder-(4).mp4](https://github.com/henrique2Zs/Genie/blob/main/simplescreenrecorder-(4).mp4)
+  - **APK** (debug): [app-debug.apk](https://github.com/henrique2Zs/Genie/blob/main/app-debug.apk)
 
 ## Semana 1
 - Instalación de dependencias para Ionic
