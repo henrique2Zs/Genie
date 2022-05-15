@@ -60,7 +60,6 @@ export class ViewCardPage implements OnInit {
   createCard() {
     this.creating = false
     this.cardsService.put(this.card)
-    new BuildPage(this.router, this.cardsService, this.route)
     this.router.navigate(['..'], {relativeTo: this.route})
     
   }

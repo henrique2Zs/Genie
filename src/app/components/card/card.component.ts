@@ -34,6 +34,10 @@ export class CardComponent implements OnInit {
     this.card.src = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.webPath));
   }
 
+  deleteImg() {
+    this.card.src = ""
+  }
+
   addInWishList() {    
     this.cardsServs.addInWishList(this.card.id)
   }

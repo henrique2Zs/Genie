@@ -1,19 +1,24 @@
 <ion-card button="true" type="button" contenteditable="!readonly">
   <ion-card-header>
     <ion-card-title>
-      <ion-input [readonly]="readonly" [(ngModel)]="card.title" name="title" placeholder="Título descriptivo"
+      <ion-input [readonly]="readonly" [(ngModel)]="card.title" name="title" placeholder="Title"
         type="text"></ion-input>
     </ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
-    <ion-thumbnail>      
+    <ion-thumbnail> 
+      <ion-fab *ngIf="!readonly" vertical="top" horizontal="center">
+        <ion-fab-button (click)="deleteImg()">
+          <ion-icon color="danger" name="trash"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>     
       <img *ngIf="readonly" contenteditable="!readonly" [src]="card.src" width="80%">
       <img *ngIf="!readonly" (click)="updateImg()" contenteditable="!readonly" [src]="card.src" width="80%">
     </ion-thumbnail>
-    <ion-input [readonly]="readonly" [(ngModel)]="card.link" name="enlace" placeholder="Enlace de referencia (opcional)"
-      type="url"></ion-input>
-    <ion-textarea [readonly]="readonly" [(ngModel)]="card.description" name="subtitle" placeholder="Descripcion">
+    <ion-input [readonly]="readonly" [(ngModel)]="card.link" name="enlace" placeholder="Link (optional)"
+      type="url" inputmode="url"></ion-input>
+    <ion-textarea [readonly]="readonly" [(ngModel)]="card.description" name="description" placeholder="Description">
     </ion-textarea>
     <ion-item>
       <ion-icon (click)="addInWishList()" *ngIf="!card.inWishList" slot=end name="list-outline" color="medium" size="large"></ion-icon>            

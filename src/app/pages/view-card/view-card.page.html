@@ -1,15 +1,15 @@
 <ion-content>
-  <ion-item>    
-    <ion-icon (click)="cloneCard()" name="create-outline" color="primary" size="large" slot="end"></ion-icon>
+  <ion-item>
+    <ion-icon *ngIf="!creating" (click)="cloneCard()" name="create-outline" color="primary" size="large" slot="end"></ion-icon>
+    <ion-button *ngIf="creating" (click)="createCard()" color="primary" slot="end">Save</ion-button>
   </ion-item>
-  <ion-card *ngIf="!creating">
+  <span *ngIf="!creating">
     <card-component [readonly]="true" [card]="card"></card-component>
-    
-  </ion-card>
-  <ion-card *ngIf="creating">
-    <card-component [readonly]="false" [card]="card"></card-component>
-    <ion-button (click)="createCard()">Save</ion-button>
-  </ion-card>
+  </span>
+  <span *ngIf="creating">
+    <card-component [readonly]="false" [card]="card"></card-component>    
+  </span>
+
 
   <ion-item>
     <ion-icon (click)="openContactList=true" name="share-social" color="primary" size="large" slot="start"></ion-icon>
@@ -20,7 +20,7 @@
         <ion-icon name="paper-plane" color="primary" size="small" slot="end"></ion-icon>
       </ion-button>
     </ion-item>
-      <app-contacts [collectionUsers]="contactsList"></app-contacts>   
+    <app-contacts [collectionUsers]="contactsList"></app-contacts>
   </span>
-  
+
 </ion-content>
