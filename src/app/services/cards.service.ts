@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Card } from '../class/card';
+import { Firestore, collectionData, addDoc, setDoc, doc, DocumentReference, QueryDocumentSnapshot, collection, docData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { CardDB } from '../model/card';
 
 @Injectable({
   providedIn: 'root'
@@ -28,11 +31,12 @@ export class CardsService {
 
   emuletedDBprovidecards: Map<number, Card> = new Map<number, Card>();
 
+  cardsFirebase: Observable<Card[]>
 
 
   ngOnInit() { }
 
-  constructor() {
+  constructor(private firestore: Firestore) {
     // Inicio datos de prueba
     this.emuletedDBprovidecards.set(1,
       new Card(
@@ -41,8 +45,7 @@ export class CardsService {
         "assets/patinete1.jpg",
         "Built",
         "test 1",
-        1,
-        "es"
+
       ));
     this.emuletedDBprovidecards.set(2,
       new Card(
@@ -50,9 +53,7 @@ export class CardsService {
         "www.bing2",
         "assets/patinete1.jpg",
         "Liked",
-        "test 2",
-        2,
-        "es"
+        "test 2"
       ));
     this.emuletedDBprovidecards.set(3,
       new Card(
@@ -61,8 +62,6 @@ export class CardsService {
         "assets/patinete1.jpg",
         "Sent",
         "test 3",
-        3,
-        "es"
       ));
     this.emuletedDBprovidecards.set(4,
       new Card(
@@ -70,9 +69,7 @@ export class CardsService {
         "www.bing2",
         "assets/patinete1.jpg",
         "Wished",
-        "test 4",
-        4,
-        "es"
+        "test 4"
       ));
     this.emuletedDBprovidecards.set(5,
       new Card(
@@ -80,9 +77,7 @@ export class CardsService {
         "www.bing2",
         "assets/patinete1.jpg",
         "In Selection only",
-        "test 5",
-        5,
-        "es"
+        "test 5"
       ));
     this.emuletedDBprovidecards.set(6,
       new Card(
@@ -90,18 +85,16 @@ export class CardsService {
         "www.bing2",
         "assets/patinete1.jpg",
         "In Selection only",
-        "test 6",
-        6,
-        "es"
+        "test 6"
       ));
-      this.emuletedDBprovidecards.set(7,
-        new Card( 7, "www.bing2", "assets/celta.jpg",  "build", "test 7", 7, "es"));
-      this.emuletedDBprovidecards.set(8,
-      new Card( 8, "www.bing2", "assets/courier.jpg",  "build", "test 8", 8, "es"));
-      this.emuletedDBprovidecards.set(9,
-      new Card( 9, "www.bing2", "assets/patinete1.jpg",  "build", "test 9", 9, "es"));
-      this.emuletedDBprovidecards.set(10,
-        new Card( 10, "www.bing2", "assets/xlx.jpg",  "build", "test 10", 10, "es"));          
+    this.emuletedDBprovidecards.set(7,
+      new Card(7, "www.bing2", "assets/celta.jpg", "build", "test 7"));
+    this.emuletedDBprovidecards.set(8,
+      new Card(8, "www.bing2", "assets/courier.jpg", "build", "test 8"));
+    this.emuletedDBprovidecards.set(9,
+      new Card(9, "www.bing2", "assets/patinete1.jpg", "build", "test 9"));
+    this.emuletedDBprovidecards.set(10,
+      new Card(10, "www.bing2", "assets/xlx.jpg", "build", "test 10"));
 
     this.numsBuilt.push(1)
     this.numsBuilt.push(7)
@@ -111,11 +104,15 @@ export class CardsService {
     //this.numsSent.push(3) The service cardXContacts must to do this operation
     this.numsWished.push(4)
     this.numsReceived.push(6)
+
+    this.cardsFirebase = this.getCardsDB()
     // Fin datos de prueba
 
     this.allCardsArray = this.buildArrayFromNumbersCard()
     this.buildAllCardsMap(this.allCardsArray)
     this.buildSelectionCardFromDB()
+
+    console.log(this.cardsFirebase)
   }
   /* 
   * Recopile all numbers cards in a array to be used to build the main map
@@ -152,7 +149,39 @@ export class CardsService {
     }
   }
 
+  public async addProductDB(card: Card) {
+    const cardObj = {
+      title: card.title,
+      description: card.description,
+      src: card.src,
+      link: card.link
+    }
+
+    //QueryDocumentSnapshot.get("/cardsId")
+    const cardUp = setDoc(doc(this.firestore, "/cards", card.id.toString()), cardObj)
+      .then(() => console.log("CardUp guardado con éxito"), () => console.error("Card rejetado y no guardado"));
+  }
+
+  getCardsDB(): Observable<Card[]> {
+    const collectionRef = collection(this.firestore, 'cards')
+    return collectionData(collectionRef, { idField: 'cardId' }) as Observable<Card[]>
+  }
+
   public getCardOnDB(num: number): Card {
+    try {
+      const docRef = doc(this.firestore, `/cards/${num.toString()}`)
+      let docR = docData(docRef, { idField: 'cardId' }) as Observable<CardDB>
+      let cardDB: CardDB
+      docR.subscribe(
+        data => cardDB = data
+      );
+      console.log(cardDB)
+      //console.log(docRef.toString())
+
+      console.log(num)
+    } catch (error) {
+      console.error(error)
+    }
     let card = this.emuletedDBprovidecards.get(num)
     card.liked = this.numsLiked.includes(num)
     card.inWishList = this.numsWished.includes(num)
@@ -185,7 +214,7 @@ export class CardsService {
           }
         }
       }
-    }    
+    }
     this.numsSelectedToshow.sort()
   }
 
@@ -196,9 +225,9 @@ export class CardsService {
     let length = this.numsReceived.length
     let startIndex = this.pointerReceived
     let diffLengthPointer = length - startIndex
-    let endIndex = diffLengthPointer < 5 ? startIndex + diffLengthPointer : startIndex + 4    
+    let endIndex = diffLengthPointer < 5 ? startIndex + diffLengthPointer : startIndex + 4
     this.numsSelectedToshow = this.numsReceived.slice(startIndex, endIndex)
-    this.pointerReceived = endIndex    
+    this.pointerReceived = endIndex
   }
 
   public getCards(): Map<number, Card> {

@@ -42,7 +42,8 @@ export class SelectionPage implements OnInit {
     }
   }
 
-  reachedEnd(bool: boolean) {
+  reachedEnd() {
+    console.log("Evento reachEnd")
     this.reachEnd = true
   }
 }

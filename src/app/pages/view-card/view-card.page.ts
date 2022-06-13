@@ -53,13 +53,14 @@ export class ViewCardPage implements OnInit {
   }
 
   cloneCard() {
-    this.card = this.card.clone()
+    this.card = Card.clone(this.card)
     this.creating = true
   }
 
   createCard() {
     this.creating = false
     this.cardsService.put(this.card)
+    this.cardsService.addProductDB(this.card)
     this.router.navigate(['..'], {relativeTo: this.route})
     
   }

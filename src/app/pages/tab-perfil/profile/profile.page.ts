@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/class/user';
+import { LoginService } from 'src/app/services/login.service';
 
 
  
@@ -12,7 +13,9 @@ export class ProfilePage implements OnInit {
 
   user: User = new User("hzz","henrique");
 
-  constructor() { }
+  constructor(
+    private selfUser: LoginService
+  ) { }
 
   ngOnInit() {
   }

@@ -19,9 +19,6 @@ export class User {
         this.fullname = fullname;
     }
 
-    public sendCard(num: number)  {
-        this.cardsSent.push(num);
-    }
 }
 
 

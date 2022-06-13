@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "genie-586e6"
+  },
+  "targets": {
+    "genie-586e6": {
+      "hosting": {
+        "app": [
+          "genie-586e6"
+        ]
+      }
+    }
+  }
+}

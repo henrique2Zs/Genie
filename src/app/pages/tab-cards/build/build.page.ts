@@ -10,7 +10,7 @@ import { CardsService } from 'src/app/services/cards.service';
 })
 export class BuildPage implements OnInit {
 
-  cardNew: Card = new Card(0, 'www. .com', 'assets/add-circle-outline.svg', 'NEW CARD', '', 0, '');
+  cardNew: Card = new Card(0, 'www. .com', 'assets/add-circle-outline.svg', 'NEW CARD', '');
   collectionBuilt: Card[] = new Array
 
   constructor(
@@ -22,7 +22,7 @@ export class BuildPage implements OnInit {
   ngOnInit() { }
 
   buildCard() {
-    this.cardsService.selectedCard = new Card(0, 'www. .com', 'assets/add-circle-outline.svg', 'NEW CARD', '', 0, '');
+    this.cardsService.selectedCard = new Card(0, 'www. .com', 'assets/add-circle-outline.svg', 'NEW CARD', '');
     this.router.navigate(["tabs/subtab-cards/build/viewCardPage"])
   }
 
