@@ -14,7 +14,7 @@ import { ContactsService } from 'src/app/services/contacts.service';
 export class ViewContactsPage implements OnInit {
 
   user: User;
-  cards = new Array<Card>()
+  cards: Card[] | Promise<Card[]>
 
   constructor(
     private router: Router,
@@ -29,8 +29,13 @@ export class ViewContactsPage implements OnInit {
   }
 
   buildUsersCardsMap() {
-    for (let num of this.user.cardsWishes) {
-      this.cards.unshift(this.serviceCards.getCardOnDB(num))
+    for (let num of this.user.cardsWishes) {      
+      let cardsArray = new Array<Card>()
+      this.cards = this.serviceCards.getCardOnDB(num).then(
+        (card: Card) => {
+          cardsArray.unshift(card);
+          return cardsArray;
+        })
     }
   }
 
