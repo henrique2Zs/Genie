@@ -53,8 +53,12 @@ El anteproyecto se encuentra en la rama anteproyecto.
  - Funcionalidad de modificar la imagen de un card que está siendo editado así como de incluir una imagen en un nuevo card
  - Ajustes de los "grids" de las páginas que mostran los cards para que sean resposivos a 3 tamaños de pantalla distintos así como que tengan los cards casi el mismo tamaño. Todavía el tamaño de las imagénes de los cards modifican el tamaño de ellos.
 
+## Semana 6
+  - Migración de las funcionalidades de carga de datos de los cards para utilización de Firestore.
+
 ## referencias
  - https://leanpub.com/aprendeionic/ 
+ - https://firebase.google.com/docs/firestore/query-data/queries?hl=es-419
  - https://developer.mozilla.org/es/docs/Web/HTML/Element
  - https://developer.mozilla.org/es/docs/Web/HTML
  - https://developer.mozilla.org/es/docs/Web/HTML/Global_attributes
