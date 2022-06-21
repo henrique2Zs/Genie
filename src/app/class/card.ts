@@ -1,6 +1,4 @@
 import { SafeResourceUrl } from '@angular/platform-browser';
-import { CardDB } from '../model/card';
-
 
 export class Card {
   id?: number;

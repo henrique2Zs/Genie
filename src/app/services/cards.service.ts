@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Card } from '../class/card';
-import {
-  Firestore, collectionData, addDoc, setDoc, doc, query, DocumentReference, QueryDocumentSnapshot, collection, orderBy,
-  limit, docData, getDoc, getDocs, limitToLast, increment
-} from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { CardDB } from '../model/card';
-import { MapType } from '@angular/compiler';
+import { Firestore, setDoc, doc, getDoc, increment } from '@angular/fire/firestore';
 import { updateDoc } from '@firebase/firestore';
 
 @Injectable({
@@ -70,8 +64,6 @@ export class CardsService {
     this.buildAllCardsMap(this.allCardsArray)
     this.buildSelectionCardFromDB()
     this.getCardsSellection()
-
-    //console.log(this.cardsFirebase)
   }
   /* 
   * Recopile all numbers cards in a array to be used to build the main map
@@ -113,26 +105,17 @@ export class CardsService {
         , () =>console.log("Fail to get the card number: " + num)
       );
     }
-    console.table(this.allCardsMap)
   }
 
   public async addProductDB(card: Card) {
     let lastIdcard: any;
     try {
       let docRef;
-      ({ docRef, lastIdcard } = await this.getLastIdCard());    
-    /*const cardsCollectionRef = collection(this.firestore, 'cards')
-    let lastNum = query(cardsCollectionRef, limitToLast(1));  
-   
-    const querySnapshot = await getDocs(lastNum);
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-      }); */
-    setDoc(doc(this.firestore, "/cards", (lastIdcard.count + 1).toString()).withConverter(this.cardConverter), card)
-      .then(() => {console.log("CardUp guardado con éxito");
-                  updateDoc(docRef, 'count', increment(1))}
-                  , () => console.error("Card rejetado y no guardado"));
+      ({ docRef, lastIdcard } = await this.getLastIdCard());       
+      setDoc(doc(this.firestore, "/cards", (lastIdcard.count + 1).toString()).withConverter(this.cardConverter), card)
+        .then(() => {console.log("CardUp guardado con éxito");
+                    updateDoc(docRef, 'count', increment(1))}
+                    , () => console.error("Card rejetado y no guardado"));
     } catch (error) {
       console.error("Error en get count Cards on addProcductDB" + error)
     }
@@ -144,7 +127,6 @@ export class CardsService {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       lastIdcard = docSnap.data();
-      console.log(lastIdcard.count);
     } else {
       // doc.data() will be undefined in this case
       console.error("No such document! " + "count");
@@ -177,8 +159,7 @@ export class CardsService {
   * The number tried could not exist because was censored or the end of all 
   * created card has reached.
   */
-  public async buildSelectionCardFromDB(): Promise<void> {
-    // TODO: Cambiar valor de endOfList por consulta a BBDD por el mayor número
+  public async buildSelectionCardFromDB(): Promise<void> {    
     let lastIdcard;
     let docRef;
     ({ docRef, lastIdcard } = await this.getLastIdCard());  
@@ -189,14 +170,14 @@ export class CardsService {
     // This block "while" is necessary because on block "for" can not find some number
     while (this.lastNumberShowed <= endOfList && this.numsSelectedToshow.length <= 10) {
       for (this.lastNumberShowed; endOfList >= this.lastNumberShowed; this.lastNumberShowed++) {
+        this.numsSelectedToshow.push(this.lastNumberShowed);
         if (!this.allCardsMap.has(this.lastNumberShowed)) {
           this.collSelectionReady ++;
           this.getCardOnDB(this.lastNumberShowed).then(
             (card: Card) => {
               card.liked = this.numsLiked.includes(card.id);
               card.inWishList = this.numsWished.includes(card.id);
-              this.allCardsMap.set(card.id, card);
-              this.numsSelectedToshow.push(card.id) }
+              this.allCardsMap.set(card.id, card); }              
               , () =>console.log("Fail to get the card number: " + this.lastNumberShowed))
               .finally( () => this.collSelectionReady --)
           
@@ -227,12 +208,9 @@ export class CardsService {
     return this.allCardsMap.get(num)
   }
 
-  public put(card: Card): void {
-    //this.allCardsMap.set(card.id, <Observable<Card>>card);
+  public put(card: Card): void {    
     this.numsBuilt.push(card.id)
-    this.getCardsBuilt()
-    //push card into db
-    //pull cards from db
+    this.getCardsBuilt()    
   }
 
   addInWishList(cardId: number) {
@@ -278,13 +256,7 @@ export class CardsService {
     this.collectionLiked = this.buildCards(this.numsLiked);
     return this.collectionLiked
   }
-  public getCardsSellection(): Card[] {
-    /*
-    while (this.collSelectionReady > 0 ) {
-      const sleep = (milliseconds) => {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-      }
-    } */
+  public getCardsSellection(): Card[] {   
     this.collectionSellection = this.buildCards(this.numsSelectedToshow);
     return this.collectionSellection
   }

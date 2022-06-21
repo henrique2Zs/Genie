@@ -10,8 +10,6 @@ import { ContactsService } from './contacts.service';
 export class CardXcontactsService {
   
   sentNumCardXcontacts: Map<number, Map<string, User[]>> = new Map<number, Map<string, User[]>>();
-  sentCardXContacts: Map<Card, User[]> = new Map<Card, User[]>();
-  usersCardsAnswers: Map<string, User[]> = new Map<string, User[]>()
 
   constructor(
     private contactsService: ContactsService,
@@ -48,15 +46,6 @@ export class CardXcontactsService {
     }
   }
 
-/*
-  getCardXUsers(): Map<Card, User[]> {
-    this.builNumbersCardMap();
-    for (let item of this.sentNumCardXcontacts) {
-      this.sentCardXContacts.set(this.cardsService.cards.get(item[0]), item[1]);
-    }    
-    return this.sentCardXContacts;
-  }
-*/
 
   getUsersOfSelectedCard(): Map<string, User[]> {
     this.builNumbersCardMap();
