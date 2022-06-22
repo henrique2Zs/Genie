@@ -14,7 +14,7 @@ export class WishesPagePage implements OnInit {
 
   constructor(
     private router: Router,
-    private cardsService: CardsService) {}
+    public cardsService: CardsService) {}
 
   ngOnInit() {}
 

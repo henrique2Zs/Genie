@@ -17,7 +17,7 @@ export class SelectionPage implements OnInit {
 
   constructor(
     private router: Router,
-    private cardsService: CardsService,
+    public cardsService: CardsService,
     private route: ActivatedRoute) 
     {
     this.cardsSellection = this.cardsService.getCardsSellection();

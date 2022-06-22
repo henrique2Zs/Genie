@@ -15,8 +15,8 @@ export class CardXContactsSentPage implements OnInit {
 
   constructor(
     private router: Router,
-    private cardsService: CardsService,
-    private serviceSents: CardXcontactsService
+    public cardsService: CardsService,
+    public serviceSents: CardXcontactsService
     ) { }
 
   ngOnInit() {}

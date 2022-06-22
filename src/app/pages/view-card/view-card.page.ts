@@ -22,9 +22,9 @@ export class ViewCardPage implements OnInit {
   contactsList: User[] = new Array  
 
   constructor(
-    private cardsService: CardsService,
-    private contactService: ContactsService,
-    private cardXcontactService: CardXcontactsService,
+    public cardsService: CardsService,
+    public contactService: ContactsService,
+    public cardXcontactService: CardXcontactsService,
     private router?: Router,
     private route?: ActivatedRoute,
    

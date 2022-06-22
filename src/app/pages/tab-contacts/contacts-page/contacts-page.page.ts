@@ -20,7 +20,7 @@ export class ContactsPage implements OnInit {
 
   constructor(
     private router: Router,
-    private contactsServs: ContactsService,
+    public contactsServs: ContactsService,
     private infouser: InfoPerfilComponent) { }
 
   ngOnInit() {}

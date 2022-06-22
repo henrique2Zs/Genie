@@ -14,13 +14,13 @@ import { ContactsService } from 'src/app/services/contacts.service';
 export class ViewContactsPage implements OnInit {
 
   user: User;
-  cards: Card[] | Promise<Card[]>
+  cards: Promise<Card[]>
 
   constructor(
     private router: Router,
-    private service: ContactsService,
+    public service: ContactsService,
     private infouser: InfoPerfilComponent,
-    private serviceCards: CardsService) {
+    public serviceCards: CardsService) {
     this.user = service.contactSelected;
     this.buildUsersCardsMap()
    }

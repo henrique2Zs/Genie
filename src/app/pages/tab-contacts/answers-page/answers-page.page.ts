@@ -12,7 +12,7 @@ export class AnswersPage implements OnInit {
 
   constructor(
     private router: Router,
-    private contactsService: ContactsService) { }
+    public contactsService: ContactsService) { }
 
   ngOnInit() {
   }

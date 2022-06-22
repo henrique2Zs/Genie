@@ -12,7 +12,7 @@ export class LikedPage implements OnInit {
 
   constructor(
     private router: Router,
-    private cardsService: CardsService,
+    public cardsService: CardsService,
     private route: ActivatedRoute) 
     {}
 

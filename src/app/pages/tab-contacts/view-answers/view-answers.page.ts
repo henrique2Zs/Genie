@@ -18,8 +18,8 @@ export class ViewAnswersPage implements OnInit {
   cardsNoanswer: Card[] = new Array
 
   constructor(
-    private service: ContactsService,
-    private servsCardXContacts: CardXcontactsService) 
+    public service: ContactsService,
+    public servsCardXContacts: CardXcontactsService) 
   {
    this.user = service.contactSelected;
    this.mapCardsXanswers = servsCardXContacts.getCardsAnswerOfSelected()

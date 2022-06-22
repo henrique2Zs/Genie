@@ -1464,10 +1464,10 @@
   "resolved" "https://registry.npmjs.org/@capacitor/camera/-/camera-1.3.1.tgz"
   "version" "1.3.1"
 
-"@capacitor/cli@^3.5.1":
-  "integrity" "sha512-zIA5BqT8ZnfUFEJwHlSdQ8Q5iWqmT7S6Mgsjbk55Pkv3BKQIP2VIFYpM4E7lGLEKd4kBnKStD0lTw5/P3E03KA=="
-  "resolved" "https://registry.npmjs.org/@capacitor/cli/-/cli-3.5.1.tgz"
-  "version" "3.5.1"
+"@capacitor/cli@^3.6.0":
+  "integrity" "sha512-YNQNM1wvy3zJkKNWcNL5KzIqgV5J1YzO27MHSxZyVA6+XmWCZi8Qz/Cq/uDrepsuBG67QdIvtOeL+JnXARedfw=="
+  "resolved" "https://registry.npmjs.org/@capacitor/cli/-/cli-3.6.0.tgz"
+  "version" "3.6.0"
   dependencies:
     "@ionic/cli-framework-output" "^2.2.1"
     "@ionic/utils-fs" "^3.1.5"
@@ -1486,10 +1486,10 @@
     "tslib" "^2.1.0"
     "xml2js" "^0.4.23"
 
-"@capacitor/core@^3.0.0", "@capacitor/core@^3.5.0", "@capacitor/core@^3.5.1":
-  "integrity" "sha512-UTROxB7q/hZBnhDLcCN7mVsAX3SxXNMhVuPbtddsDOUCm4hExLXN62gPD7rjgmumhfHMjeXmkw/EfRzSjttL1g=="
-  "resolved" "https://registry.npmjs.org/@capacitor/core/-/core-3.5.1.tgz"
-  "version" "3.5.1"
+"@capacitor/core@^3.0.0", "@capacitor/core@^3.5.0", "@capacitor/core@^3.6.0":
+  "integrity" "sha512-F94ozABHXxq1xMcNGMnOVP73WZDWYR1PrJEfVfl9Ja0BXGEJURIxmHBc842OX3rrt3+g0ELHyhX9LTH16eeonw=="
+  "resolved" "https://registry.npmjs.org/@capacitor/core/-/core-3.6.0.tgz"
+  "version" "3.6.0"
   dependencies:
     "tslib" "^2.1.0"
 

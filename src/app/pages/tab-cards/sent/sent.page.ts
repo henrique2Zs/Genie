@@ -14,7 +14,7 @@ export class SentPage implements OnInit {
     private router: Router,
     private serviceSents: CardXcontactsService,
     private route: ActivatedRoute,
-    private cardsService: CardsService) 
+    public cardsService: CardsService) 
     {}
     
   ngOnInit() {
