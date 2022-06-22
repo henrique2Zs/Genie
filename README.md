@@ -12,6 +12,7 @@ El anteproyecto se encuentra en la rama anteproyecto.
 ## Presentación 23/6:
   - **APK** (debug): [app-debug-final.apk](https://github.com/henrique2Zs/Genie/blob/main/app-debug-final.apk)
   - **Presentación PDF**: [Presentación de Genie app](https://github.com/henrique2Zs/Genie/blob/main/Presentaci%C3%B3n%20Genie%20app.pdf)
+  - **Video explicativo**: [simplescreenrecorder-(4).mp4](https://github.com/henrique2Zs/Genie/blob/main/simplescreenrecorder-(4).mp4)
 
 ## Semana 1
 - Instalación de dependencias para Ionic
